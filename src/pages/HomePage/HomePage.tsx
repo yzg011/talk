@@ -22,6 +22,7 @@ import TimelineSection from './sections/TimelineSection';
 import ImagePreview from './sections/ImagePreview';
 
 const PAGE_SIZE = 10;
+const API_PREFIX = '/memos-api';
 
 export default function HomePage() {
   const [posts, setPosts] = useState<IPost[]>([]);
@@ -36,32 +37,34 @@ export default function HomePage() {
   const initialLoadDone = useRef(false);
 
   /**
-   * 从 memo attachments 中提取图片 URL
+   * 图片地址拼接：name + filename 完整路径
    */
-  const extractImagesFromMemo = (attachments: any[]): string[] => {
-    if (!attachments || attachments.length === 0) return [];
+  const extractImagesFromMemo = (attachments?: any[]): string[] => {
+    if (!Array.isArray(attachments) || attachments.length === 0) return [];
     return attachments
       .filter((a) => a.type?.startsWith('image/'))
       .map((a) => {
         if (a.externalLink) return a.externalLink;
-        // 构造资源访问 URL
-        return `${MEMOS_BASE_URL}/file/${a.name}`;
-      });
+        if (!a.name || !a.filename) return '';
+        return `${API_PREFIX}/file/${a.name}/${a.filename}`;
+      })
+      .filter(Boolean);
   };
 
   /**
-   * 计算点赞数和当前用户是否点赞
+   * 点赞状态计算
    */
-  const extractLikeInfo = (reactions: any[]) => {
+  const extractLikeInfo = (reactions?: any[], userId?: string) => {
     const thumbsUp = reactions?.filter((r) => r.reactionType === 'THUMBS_UP') || [];
+    const myReaction = thumbsUp.find((r) => r.creatorId === userId);
     return {
       likeCount: thumbsUp.length,
-      liked: false,
-      myReactionId: null as string | null,
+      liked: !!myReaction,
+      myReactionId: myReaction?.id ?? null,
     };
   };
 
-  /* ── 初始加载 ── */
+  /* 加载列表 */
   const loadPosts = useCallback(async (pageToken?: string) => {
     try {
       setError(null);
@@ -74,7 +77,7 @@ export default function HomePage() {
 
       const apiPosts: IPost[] = result.memos.map((memo) => {
         const images = extractImagesFromMemo(memo.attachments);
-        const likeInfo = extractLikeInfo(memo.reactions);
+        const likeInfo = extractLikeInfo(memo.reactions, undefined);
         return {
           id: memo.name,
           nick: MOCK_PROFILE.nick,
@@ -120,15 +123,12 @@ export default function HomePage() {
     }
   }, [loadPosts]);
 
-  /* ── 加载评论 ── */
+  /* 加载评论 */
   const loadComments = useCallback(async (postId: string) => {
-    // 避免重复加载
     if (loadingComments.has(postId)) return;
 
     const post = posts.find((p) => p.id === postId);
     if (!post || post.source === 'mock') return;
-
-    // 如果已经加载过评论，就不重复加载了
     if (post.replies.length > 0) return;
 
     setLoadingComments((prev) => new Set(prev).add(postId));
@@ -137,16 +137,14 @@ export default function HomePage() {
       const comments = await getMemoComments(postId);
       const replies: IReply[] = comments.map((c) => ({
         id: c.name || c.uid || `r-${Math.random()}`,
-        nick: MOCK_PROFILE.nick, // memos 评论没有昵称，先用默认的
+        nick: MOCK_PROFILE.nick,
         avatar: MOCK_PROFILE.avatar,
         content: c.content,
         created: c.createTime || new Date().toISOString(),
       }));
 
       setPosts((prev) =>
-        prev.map((p) =>
-          p.id === postId ? { ...p, replies } : p,
-        ),
+        prev.map((p) => (p.id === postId ? { ...p, replies } : p)),
       );
     } catch (err) {
       console.error('Failed to load comments:', err);
@@ -160,29 +158,31 @@ export default function HomePage() {
     }
   }, [posts, loadingComments]);
 
-  /* ── 发布动态 ── */
+  /* 发布动态（修复上传逻辑，完整保存filename） */
   const handlePublish = useCallback(async (content: string, imageFiles: File[]) => {
     try {
-      // 1. 先上传所有图片
       const uploadedResources = [];
+      // 循环上传每张图片
       for (const file of imageFiles) {
         const resource = await uploadResource(file);
+        // 必须携带 filename，否则拼接图片地址会失效
         uploadedResources.push({
           name: resource.name,
+          filename: resource.filename,
           type: resource.type,
           size: resource.size,
           externalLink: resource.externalLink,
         });
       }
 
-      // 2. 创建 memo（带附件）
+      // 创建备忘录
       const result = await createMemo({
-        content: content || ' ',
+        content: content.trim() || ' ',
         visibility: 'PUBLIC',
         attachments: uploadedResources,
       });
 
-      // 3. 构造新动态
+      // 生成图片列表
       const images = extractImagesFromMemo(result.attachments || uploadedResources);
       const newPost: IPost = {
         id: result.name,
@@ -198,14 +198,15 @@ export default function HomePage() {
         source: 'api',
       };
       setPosts((prev) => [newPost, ...prev]);
+      toast.success('发布成功');
     } catch (err) {
-      console.error('Failed to publish:', err);
-      toast.error('发布失败');
+      console.error('发布/上传失败：', err);
+      toast.error('图片上传或发布失败，请重试');
       throw err;
     }
   }, []);
 
-  /* ── 删除动态 ── */
+  /* 删除 */
   const handleDelete = useCallback(async (postId: string) => {
     const post = posts.find((p) => p.id === postId);
     if (!post) return;
@@ -218,12 +219,13 @@ export default function HomePage() {
     try {
       await deleteMemo(postId);
       setPosts((prev) => prev.filter((p) => p.id !== postId));
+      toast.success('删除成功');
     } catch {
       toast.error('删除失败');
     }
   }, [posts]);
 
-  /* ── 点赞 ── */
+  /* 点赞 */
   const handleLike = useCallback(async (postId: string) => {
     const post = posts.find((p) => p.id === postId);
     if (!post || post.liked) return;
@@ -251,7 +253,7 @@ export default function HomePage() {
     }
   }, [posts]);
 
-  /* ── 取消点赞 ── */
+  /* 取消点赞 */
   const handleUnlike = useCallback(async (postId: string) => {
     const post = posts.find((p) => p.id === postId);
     if (!post || !post.liked) return;
@@ -281,7 +283,7 @@ export default function HomePage() {
     }
   }, [posts]);
 
-  /* ── 评论 ── */
+  /* 评论 */
   const handleComment = useCallback(async (postId: string, content: string) => {
     const post = posts.find((p) => p.id === postId);
     if (!post) return;
@@ -316,18 +318,19 @@ export default function HomePage() {
           p.id === postId ? { ...p, replies: [...p.replies, newReply] } : p,
         ),
       );
+      toast.success('评论成功');
     } catch {
       toast.error('评论发布失败');
     }
   }, [posts]);
 
-  /* ── 加载更多 ── */
+  /* 加载更多 */
   const handleLoadMore = useCallback(() => {
     if (loading || !hasMore) return;
     loadPosts(nextPageToken);
   }, [loading, hasMore, nextPageToken, loadPosts]);
 
-  /* ── 图片预览 ── */
+  /* 图片预览 */
   const handleImageClick = useCallback((images: string[], index: number) => {
     setPreviewImages(images);
     setPreviewIndex(index);
@@ -341,13 +344,8 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
       <main className="max-w-[640px] mx-auto px-4 py-8 md:py-12 space-y-8">
-        {/* 个人信息区 */}
         <ProfileSection profile={MOCK_PROFILE} />
-
-        {/* 发布动态区 */}
         <PublishSection onPublish={handlePublish} />
-
-        {/* 动态时间线 */}
         <TimelineSection
           posts={posts}
           loading={loading}
@@ -363,8 +361,6 @@ export default function HomePage() {
           loadingComments={loadingComments}
         />
       </main>
-
-      {/* 图片预览弹窗 */}
       <ImagePreview
         images={previewImages}
         initialIndex={previewIndex}

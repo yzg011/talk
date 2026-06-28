@@ -1,0 +1,730 @@
+[2026-06-28 09:34:47] [client] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[2026-06-28 09:34:47] [client] npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[2026-06-28 09:34:48] [client] `server.hmr.protocol/host/port/path/clientPort/timeout/server` is deprecated. Use `server.ws.*` instead. Note that this option may be set by a plugin. Set VITE_DEPRECATION_TRACE=1 to see where it is called.
+[2026-06-28 09:34:48] [client] 
+[2026-06-28 09:34:48] [client]   VITE v8.1.0  ready in 908 ms
+[2026-06-28 09:34:48] [client] 
+[2026-06-28 09:34:48] [client]   ➜  Local:   http://localhost:8001/
+[2026-06-28 09:34:48] [client]   ➜  Network: http://127.0.2.2:8001/
+[2026-06-28 09:34:48] [client]   ➜  Network: http://127.0.2.3:8001/
+[2026-06-28 09:34:48] [client]   ➜  Network: http://192.168.1.8:8001/
+[2026-06-28 09:34:48] [client]   ➜  Network: http://100.95.98.3:8001/
+[2026-06-28 09:34:48] [client]   ➜  Network: http://172.16.0.2:8001/
+[2026-06-28 09:46:16] [client] 09:46:16 [vite] (client) page reload src/api/twikoo.ts
+[2026-06-28 09:46:16] [client] 09:46:16 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 09:46:16] [client] 09:46:16 [vite] (client) page reload src/types/post.ts
+[2026-06-28 09:46:16] [client] 09:46:16 [vite] (client) page reload src/index.tsx
+[2026-06-28 09:46:16] [client] 09:46:16 [vite] (client) hmr update /src/index.css
+[2026-06-28 09:46:16] [client] 09:46:16 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 09:50:13] [client] 09:50:13 [vite] (client) hmr update /src/pages/HomePage/sections/ProfileSection.tsx, /src/index.css
+[2026-06-28 09:50:13] [client] 09:50:13 [vite] (client) hmr update /src/pages/HomePage/sections/TimelineSection.tsx, /src/index.css
+[2026-06-28 09:50:13] [client] 09:50:13 [vite] (client) hmr update /src/pages/HomePage/sections/PostCard.tsx, /src/index.css
+[2026-06-28 09:50:13] [client] 09:50:13 [vite] (client) hmr update /src/pages/HomePage/sections/ImagePreview.tsx, /src/index.css
+[2026-06-28 09:50:13] [client] 09:50:13 [vite] (client) hmr update /src/pages/HomePage/sections/PublishSection.tsx, /src/index.css
+[2026-06-28 09:50:13] [client] 09:50:13 [vite] Internal server error: ENOENT: no such file or directory, open '/Users/yu/Desktop/vlog/app_4kezbdy2xttzy/src/tailwind-theme.css'
+[2026-06-28 09:50:13] [client]   Plugin: @tailwindcss/vite:generate:serve
+[2026-06-28 09:50:13] [client]   File: /Users/yu/Desktop/vlog/app_4kezbdy2xttzy/src/index.css
+[2026-06-28 09:50:13] [client]       at async open (node:internal/fs/promises:640:25)
+[2026-06-28 09:50:13] [client]       at async Object.readFile (node:internal/fs/promises:1287:14)
+[2026-06-28 09:50:13] [client]       at async St (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/@tailwindcss+node@4.3.1/node_modules/@tailwindcss/node/dist/index.mjs:10:4199)
+[2026-06-28 09:50:13] [client]       at async loadStylesheet (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/@tailwindcss+node@4.3.1/node_modules/@tailwindcss/node/dist/index.mjs:10:2950)
+[2026-06-28 09:50:13] [client]       at async file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/tailwindcss@4.3.1/node_modules/tailwindcss/dist/lib.mjs:21:2948
+[2026-06-28 09:50:13] [client]       at async Promise.all (index 2)
+[2026-06-28 09:50:13] [client]       at async or (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/tailwindcss@4.3.1/node_modules/tailwindcss/dist/lib.mjs:21:3106)
+[2026-06-28 09:50:13] [client]       at async rn (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/tailwindcss@4.3.1/node_modules/tailwindcss/dist/lib.mjs:32:2597)
+[2026-06-28 09:50:13] [client]       at async Ao (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/tailwindcss@4.3.1/node_modules/tailwindcss/dist/lib.mjs:38:631)
+[2026-06-28 09:50:13] [client]       at async Ef (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/tailwindcss@4.3.1/node_modules/tailwindcss/dist/lib.mjs:38:1406)
+[2026-06-28 09:50:13] [client] 09:50:13 [vite] Internal server error: ENOENT: no such file or directory, open '/Users/yu/Desktop/vlog/app_4kezbdy2xttzy/src/tailwind-theme.css'
+[2026-06-28 09:50:13] [client]   Plugin: @tailwindcss/vite:generate:serve
+[2026-06-28 09:50:13] [client]   File: /Users/yu/Desktop/vlog/app_4kezbdy2xttzy/src/index.css
+[2026-06-28 09:50:13] [client]       at async open (node:internal/fs/promises:640:25)
+[2026-06-28 09:50:13] [client]       at async Object.readFile (node:internal/fs/promises:1287:14)
+[2026-06-28 09:50:13] [client]       at async St (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/@tailwindcss+node@4.3.1/node_modules/@tailwindcss/node/dist/index.mjs:10:4199)
+[2026-06-28 09:50:13] [client]       at async loadStylesheet (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/@tailwindcss+node@4.3.1/node_modules/@tailwindcss/node/dist/index.mjs:10:2950)
+[2026-06-28 09:50:13] [client]       at async file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/tailwindcss@4.3.1/node_modules/tailwindcss/dist/lib.mjs:21:2948
+[2026-06-28 09:50:13] [client]       at async Promise.all (index 2)
+[2026-06-28 09:50:13] [client]       at async or (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/tailwindcss@4.3.1/node_modules/tailwindcss/dist/lib.mjs:21:3106)
+[2026-06-28 09:50:13] [client]       at async rn (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/tailwindcss@4.3.1/node_modules/tailwindcss/dist/lib.mjs:32:2597)
+[2026-06-28 09:50:13] [client]       at async Ao (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/tailwindcss@4.3.1/node_modules/tailwindcss/dist/lib.mjs:38:631)
+[2026-06-28 09:50:13] [client]       at async Ef (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/tailwindcss@4.3.1/node_modules/tailwindcss/dist/lib.mjs:38:1406)
+[2026-06-28 09:50:13] [client] 09:50:13 [vite] Internal server error: ENOENT: no such file or directory, open '/Users/yu/Desktop/vlog/app_4kezbdy2xttzy/src/tailwind-theme.css'
+[2026-06-28 09:50:13] [client]   Plugin: @tailwindcss/vite:generate:serve
+[2026-06-28 09:50:13] [client]   File: /Users/yu/Desktop/vlog/app_4kezbdy2xttzy/src/index.css
+[2026-06-28 09:50:13] [client]       at async open (node:internal/fs/promises:640:25)
+[2026-06-28 09:50:13] [client]       at async Object.readFile (node:internal/fs/promises:1287:14)
+[2026-06-28 09:50:13] [client]       at async St (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/@tailwindcss+node@4.3.1/node_modules/@tailwindcss/node/dist/index.mjs:10:4199)
+[2026-06-28 09:50:13] [client]       at async loadStylesheet (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/@tailwindcss+node@4.3.1/node_modules/@tailwindcss/node/dist/index.mjs:10:2950)
+[2026-06-28 09:50:13] [client]       at async file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/tailwindcss@4.3.1/node_modules/tailwindcss/dist/lib.mjs:21:2948
+[2026-06-28 09:50:13] [client]       at async Promise.all (index 2)
+[2026-06-28 09:50:13] [client]       at async or (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/tailwindcss@4.3.1/node_modules/tailwindcss/dist/lib.mjs:21:3106)
+[2026-06-28 09:50:13] [client]       at async rn (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/tailwindcss@4.3.1/node_modules/tailwindcss/dist/lib.mjs:32:2597)
+[2026-06-28 09:50:13] [client]       at async Ao (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/tailwindcss@4.3.1/node_modules/tailwindcss/dist/lib.mjs:38:631)
+[2026-06-28 09:50:13] [client]       at async Ef (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/tailwindcss@4.3.1/node_modules/tailwindcss/dist/lib.mjs:38:1406)
+[2026-06-28 09:50:13] [client] 09:50:13 [vite] Internal server error: ENOENT: no such file or directory, open '/Users/yu/Desktop/vlog/app_4kezbdy2xttzy/src/tailwind-theme.css'
+[2026-06-28 09:50:13] [client]   Plugin: @tailwindcss/vite:generate:serve
+[2026-06-28 09:50:13] [client]   File: /Users/yu/Desktop/vlog/app_4kezbdy2xttzy/src/index.css
+[2026-06-28 09:50:13] [client]       at async open (node:internal/fs/promises:640:25)
+[2026-06-28 09:50:13] [client]       at async Object.readFile (node:internal/fs/promises:1287:14)
+[2026-06-28 09:50:13] [client]       at async St (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/@tailwindcss+node@4.3.1/node_modules/@tailwindcss/node/dist/index.mjs:10:4199)
+[2026-06-28 09:50:13] [client]       at async loadStylesheet (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/@tailwindcss+node@4.3.1/node_modules/@tailwindcss/node/dist/index.mjs:10:2950)
+[2026-06-28 09:50:13] [client]       at async file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/tailwindcss@4.3.1/node_modules/tailwindcss/dist/lib.mjs:21:2948
+[2026-06-28 09:50:13] [client]       at async Promise.all (index 2)
+[2026-06-28 09:50:13] [client]       at async or (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/tailwindcss@4.3.1/node_modules/tailwindcss/dist/lib.mjs:21:3106)
+[2026-06-28 09:50:13] [client]       at async rn (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/tailwindcss@4.3.1/node_modules/tailwindcss/dist/lib.mjs:32:2597)
+[2026-06-28 09:50:13] [client]       at async Ao (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/tailwindcss@4.3.1/node_modules/tailwindcss/dist/lib.mjs:38:631)
+[2026-06-28 09:50:13] [client]       at async Ef (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/tailwindcss@4.3.1/node_modules/tailwindcss/dist/lib.mjs:38:1406)
+[2026-06-28 09:50:13] [client] 09:50:13 [vite] Internal server error: ENOENT: no such file or directory, open '/Users/yu/Desktop/vlog/app_4kezbdy2xttzy/src/tailwind-theme.css'
+[2026-06-28 09:50:13] [client]   Plugin: @tailwindcss/vite:generate:serve
+[2026-06-28 09:50:13] [client]   File: /Users/yu/Desktop/vlog/app_4kezbdy2xttzy/src/index.css
+[2026-06-28 09:50:13] [client]       at async open (node:internal/fs/promises:640:25)
+[2026-06-28 09:50:13] [client]       at async Object.readFile (node:internal/fs/promises:1287:14)
+[2026-06-28 09:50:13] [client]       at async St (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/@tailwindcss+node@4.3.1/node_modules/@tailwindcss/node/dist/index.mjs:10:4199)
+[2026-06-28 09:50:13] [client]       at async loadStylesheet (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/@tailwindcss+node@4.3.1/node_modules/@tailwindcss/node/dist/index.mjs:10:2950)
+[2026-06-28 09:50:13] [client]       at async file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/tailwindcss@4.3.1/node_modules/tailwindcss/dist/lib.mjs:21:2948
+[2026-06-28 09:50:13] [client]       at async Promise.all (index 2)
+[2026-06-28 09:50:13] [client]       at async or (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/tailwindcss@4.3.1/node_modules/tailwindcss/dist/lib.mjs:21:3106)
+[2026-06-28 09:50:13] [client]       at async rn (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/tailwindcss@4.3.1/node_modules/tailwindcss/dist/lib.mjs:32:2597)
+[2026-06-28 09:50:13] [client]       at async Ao (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/tailwindcss@4.3.1/node_modules/tailwindcss/dist/lib.mjs:38:631)
+[2026-06-28 09:50:13] [client]       at async Ef (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/tailwindcss@4.3.1/node_modules/tailwindcss/dist/lib.mjs:38:1406)
+[2026-06-28 09:50:13] [client] 09:50:13 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 09:50:13] [client] 09:50:13 [vite] vite.config.ts changed, restarting server...
+[2026-06-28 09:50:13] [client] 09:50:13 [vite] server restarted.
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/dialog.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/native-select.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/spinner.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/radio-group.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/image.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/checkbox.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/carousel.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/table.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/select.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/sidebar.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/item.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/command.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/kbd.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/menubar.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/pages/NotFoundPage/NotFoundPage.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/toggle.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/textarea.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/separator.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/form.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/dropdown-menu.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/collapsible.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/toggle-group.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/skeleton.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/input.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/badge.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/avatar.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/context-menu.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/breadcrumb.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) page reload src/pages/ExamplePage/ExamplePage.tsx
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/button.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] Internal server error: Can't resolve './tailwind-theme.css' in '/Users/yu/Desktop/vlog/app_4kezbdy2xttzy/src'
+[2026-06-28 10:06:56] [client]   Plugin: @tailwindcss/vite:generate:serve
+[2026-06-28 10:06:56] [client]   File: /Users/yu/Desktop/vlog/app_4kezbdy2xttzy/src/index.css
+[2026-06-28 10:06:56] [client]       at finishWithoutResolve (/Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/enhanced-resolve@5.21.6/node_modules/enhanced-resolve/lib/Resolver.js:942:18)
+[2026-06-28 10:06:56] [client]       at /Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/enhanced-resolve@5.21.6/node_modules/enhanced-resolve/lib/Resolver.js:1034:14
+[2026-06-28 10:06:56] [client]       at /Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/enhanced-resolve@5.21.6/node_modules/enhanced-resolve/lib/Resolver.js:1111:5
+[2026-06-28 10:06:56] [client]       at eval (eval at create (/Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/tapable@2.3.3/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-06-28 10:06:56] [client]       at /Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/enhanced-resolve@5.21.6/node_modules/enhanced-resolve/lib/Resolver.js:1111:5
+[2026-06-28 10:06:56] [client]       at eval (eval at create (/Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/tapable@2.3.3/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:27:1)
+[2026-06-28 10:06:56] [client]       at /Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/enhanced-resolve@5.21.6/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:94:43
+[2026-06-28 10:06:56] [client]       at /Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/enhanced-resolve@5.21.6/node_modules/enhanced-resolve/lib/Resolver.js:1111:5
+[2026-06-28 10:06:56] [client]       at eval (eval at create (/Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/tapable@2.3.3/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-06-28 10:06:56] [client]       at /Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/enhanced-resolve@5.21.6/node_modules/enhanced-resolve/lib/Resolver.js:1111:5
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/pages/HomePage/sections/PostCard.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/pages/HomePage/sections/PublishSection.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/pages/HomePage/sections/TimelineSection.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/avatar.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/badge.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/breadcrumb.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/button.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/carousel.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/checkbox.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/collapsible.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/command.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/context-menu.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/dialog.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/dropdown-menu.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/form.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/image.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/input.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/item.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/kbd.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/menubar.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/native-select.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/radio-group.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/select.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/separator.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/sidebar.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/skeleton.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/spinner.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/table.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/textarea.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/toggle-group.tsx, /src/index.css
+[2026-06-28 10:06:56] [client] 10:06:56 [vite] (client) hmr update /src/components/ui/toggle.tsx, /src/index.css
+[2026-06-28 10:17:37] [client] 10:17:37 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 10:40:53] [client] 10:40:53 [vite] (client) hmr update /src/pages/HomePage/sections/ProfileSection.tsx, /src/index.css
+[2026-06-28 10:40:53] [client] 10:40:53 [vite] (client) hmr update /src/pages/HomePage/sections/PublishSection.tsx, /src/index.css
+[2026-06-28 10:40:53] [client] 10:40:53 [vite] (client) hmr update /src/pages/HomePage/sections/TimelineSection.tsx, /src/index.css
+[2026-06-28 10:40:53] [client] 10:40:53 [vite] (client) hmr update /src/pages/HomePage/sections/PostCard.tsx, /src/index.css
+[2026-06-28 10:40:53] [client] 10:40:53 [vite] (client) hmr update /src/pages/HomePage/sections/ImagePreview.tsx, /src/index.css
+[2026-06-28 10:40:54] [client] 10:40:54 [vite] (client) page reload src/types/post.ts
+[2026-06-28 10:40:54] [client] 10:40:54 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 10:40:54] [client] 10:40:54 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 10:49:35] [client] 10:49:35 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 10:49:35] [client] 10:49:35 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 10:49:35] [client] 10:49:35 [vite] (client) page reload src/types/post.ts
+[2026-06-28 10:50:37] [client] 10:50:37 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 10:51:12] [client] 10:51:12 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 10:51:12] [client] 10:51:12 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 10:51:12] [client] 10:51:12 [vite] (client) page reload src/types/post.ts
+[2026-06-28 10:51:12] [client] 10:51:12 [vite] (client) page reload src/pages/ExamplePage/ExamplePage.tsx
+[2026-06-28 10:51:12] [client] 10:51:12 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 10:51:12] [client] 10:51:12 [vite] (client) hmr update /src/pages/NotFoundPage/NotFoundPage.tsx, /src/index.css
+[2026-06-28 10:51:12] [client] 10:51:12 [vite] (client) hmr update /src/pages/HomePage/sections/ImagePreview.tsx, /src/index.css
+[2026-06-28 10:51:12] [client] 10:51:12 [vite] (client) hmr update /src/pages/HomePage/sections/PostCard.tsx, /src/index.css
+[2026-06-28 10:51:12] [client] 10:51:12 [vite] (client) hmr update /src/pages/HomePage/sections/ProfileSection.tsx, /src/index.css
+[2026-06-28 10:51:12] [client] 10:51:12 [vite] (client) hmr update /src/pages/HomePage/sections/PublishSection.tsx, /src/index.css
+[2026-06-28 10:51:12] [client] 10:51:12 [vite] (client) hmr update /src/pages/HomePage/sections/TimelineSection.tsx, /src/index.css
+[2026-06-28 10:51:24] [client] 10:51:24 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 10:51:24] [client] 10:51:24 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 10:51:24] [client] 10:51:24 [vite] (client) page reload src/types/post.ts
+[2026-06-28 10:51:24] [client] 10:51:24 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 10:51:24] [client] 10:51:24 [vite] (client) hmr update /src/pages/HomePage/sections/PublishSection.tsx, /src/index.css
+[2026-06-28 10:51:24] [client] 10:51:24 [vite] (client) hmr update /src/pages/HomePage/sections/PostCard.tsx, /src/index.css
+[2026-06-28 10:51:24] [client] 10:51:24 [vite] (client) hmr update /src/pages/HomePage/sections/TimelineSection.tsx, /src/index.css
+[2026-06-28 10:52:13] [client] 10:52:13 [vite] (client) page reload index.html
+[2026-06-28 10:52:13] [client] 10:52:13 [vite] (client) page reload index.html
+[2026-06-28 10:52:39] [client] 10:52:39 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 10:52:39] [client] 10:52:39 [vite] (client) hmr update /src/pages/HomePage/sections/TimelineSection.tsx, /src/index.css
+[2026-06-28 10:52:39] [client] 10:52:39 [vite] (client) hmr update /src/pages/HomePage/sections/PublishSection.tsx, /src/index.css
+[2026-06-28 10:52:39] [client] 10:52:39 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 10:52:39] [client] 10:52:39 [vite] (client) hmr update /src/pages/HomePage/sections/PostCard.tsx, /src/index.css
+[2026-06-28 11:02:51] [client] 11:02:51 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 11:02:51] [client] 11:02:51 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 11:07:05] [client] 11:07:05 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 11:07:05] [client] 11:07:05 [vite] (client) page reload src/types/post.ts
+[2026-06-28 11:07:05] [client] 11:07:05 [vite] (client) hmr update /src/pages/HomePage/sections/TimelineSection.tsx, /src/index.css
+[2026-06-28 11:07:05] [client] 11:07:05 [vite] (client) hmr update /src/pages/HomePage/sections/PostCard.tsx, /src/index.css
+[2026-06-28 11:07:05] [client] 11:07:05 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 11:07:05] [client] 11:07:05 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/image.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/accordion.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/sheet.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/switch.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/navigation-menu.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/popover.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/dialog.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/avatar.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/input-group.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/table.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/card.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/calendar.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/toggle.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/form.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/item.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/tooltip.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/input.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/checkbox.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/resizable.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/toggle-group.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/skeleton.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/textarea.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/collapsible.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/radio-group.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/dropdown-menu.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/carousel.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/button-group.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/alert-dialog.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/select.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/pagination.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/aspect-ratio.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/button.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/menubar.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/spinner.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/drawer.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/sonner.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/slider.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/empty.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/breadcrumb.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/label.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/separator.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/progress.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/alert.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/badge.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/context-menu.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/scroll-area.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/chart.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/command.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/tabs.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/field.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/sidebar.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/native-select.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/hover-card.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/kbd.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/components/ui/input-otp.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] Internal server error: Tsconfig not found /Users/yu/Desktop/vlog/app_4kezbdy2xttzy/tsconfig.node.json
+[2026-06-28 11:09:35] [client]   Plugin: builtin:vite-resolve
+[2026-06-28 11:09:35] [client]       at async EnvironmentPluginContainer.resolveId (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:29615:19)
+[2026-06-28 11:09:35] [client]       at async ResolveIdContext.resolve (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:29844:13)
+[2026-06-28 11:09:35] [client]       at async ResolveIdContext.viteAliasCustomResolver (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:29408:9)
+[2026-06-28 11:09:35] [client]       at async EnvironmentPluginContainer.resolveId (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:29615:19)
+[2026-06-28 11:09:35] [client]       at async ResolveIdContext.resolve (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:29844:13)
+[2026-06-28 11:09:35] [client]       at async ResolveIdContext.resolveId (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:26783:23)
+[2026-06-28 11:09:35] [client]       at async EnvironmentPluginContainer.resolveId (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:29615:19)
+[2026-06-28 11:09:35] [client]       at async TransformPluginContext.resolve (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:29844:13)
+[2026-06-28 11:09:35] [client]       at async normalizeUrl (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:26967:22)
+[2026-06-28 11:09:35] [client]       at async file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:27038:30
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] Internal server error: Tsconfig not found /Users/yu/Desktop/vlog/app_4kezbdy2xttzy/tsconfig.node.json
+[2026-06-28 11:09:35] [client]   Plugin: builtin:vite-resolve
+[2026-06-28 11:09:35] [client]       at async EnvironmentPluginContainer.resolveId (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:29615:19)
+[2026-06-28 11:09:35] [client]       at async ResolveIdContext.resolve (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:29844:13)
+[2026-06-28 11:09:35] [client]       at async ResolveIdContext.viteAliasCustomResolver (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:29408:9)
+[2026-06-28 11:09:35] [client]       at async EnvironmentPluginContainer.resolveId (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:29615:19)
+[2026-06-28 11:09:35] [client]       at async ResolveIdContext.resolve (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:29844:13)
+[2026-06-28 11:09:35] [client]       at async ResolveIdContext.resolveId (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:26783:23)
+[2026-06-28 11:09:35] [client]       at async EnvironmentPluginContainer.resolveId (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:29615:19)
+[2026-06-28 11:09:35] [client]       at async TransformPluginContext.resolve (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:29844:13)
+[2026-06-28 11:09:35] [client]       at async normalizeUrl (file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:26967:22)
+[2026-06-28 11:09:35] [client]       at async file:///Users/yu/Desktop/vlog/app_4kezbdy2xttzy/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:27038:30
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) page reload src/types/post.ts
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/pages/HomePage/sections/TimelineSection.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 11:09:35] [client] 11:09:35 [vite] (client) hmr update /src/pages/HomePage/sections/PostCard.tsx, /src/index.css
+[2026-06-28 11:21:37] [client] 11:21:37 [vite] (client) page reload src/api/twikoo.ts
+[2026-06-28 11:23:48] [client] 11:23:48 [vite] (client) page reload index.html
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/accordion.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/alert-dialog.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/alert.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/aspect-ratio.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/avatar.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/badge.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/breadcrumb.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/button-group.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/button.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/calendar.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/card.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/carousel.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/chart.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/checkbox.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/collapsible.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/command.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/context-menu.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/dialog.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/drawer.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/dropdown-menu.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/empty.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/field.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/hover-card.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/form.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/image.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/input-group.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/input-otp.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/input.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/item.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/kbd.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/label.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/menubar.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/native-select.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/navigation-menu.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/pagination.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/popover.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/progress.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/radio-group.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/resizable.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/scroll-area.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/select.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/separator.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/sheet.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/sidebar.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/skeleton.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/slider.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/sonner.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/spinner.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/table.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/switch.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/tabs.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/textarea.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/toggle-group.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/toggle.tsx, /src/index.css
+[2026-06-28 11:29:05] [client] 11:29:05 [vite] (client) hmr update /src/components/ui/tooltip.tsx, /src/index.css
+[2026-06-28 11:49:04] [client] 11:49:04 [vite] (client) page reload src/types/profile.ts
+[2026-06-28 11:50:13] [client] 11:50:13 [vite] (client) page reload src/types/profile.ts
+[2026-06-28 11:51:28] [client] 11:51:28 [vite] vite.config.ts changed, restarting server...
+[2026-06-28 11:51:28] [client] 11:51:28 [vite] server restarted.
+[2026-06-28 11:51:28] [client] 
+[2026-06-28 11:51:28] [client]   ➜  Local:   http://localhost:8001/
+[2026-06-28 11:51:28] [client]   ➜  Network: http://127.0.2.2:8001/
+[2026-06-28 11:51:28] [client]   ➜  Network: http://127.0.2.3:8001/
+[2026-06-28 11:51:28] [client]   ➜  Network: http://192.168.1.8:8001/
+[2026-06-28 11:51:28] [client]   ➜  Network: http://172.16.0.2:8001/
+[2026-06-28 11:54:05] [client] 11:54:05 [vite] vite.config.ts changed, restarting server...
+[2026-06-28 11:54:05] [client] 11:54:05 [vite] server restarted.
+[2026-06-28 13:10:22] [client] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[2026-06-28 13:10:22] [client] npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[2026-06-28 13:10:23] [client] `server.hmr.protocol/host/port/path/clientPort/timeout/server` is deprecated. Use `server.ws.*` instead. Note that this option may be set by a plugin. Set VITE_DEPRECATION_TRACE=1 to see where it is called.
+[2026-06-28 13:10:23] [client] 
+[2026-06-28 13:10:23] [client]   VITE v8.1.0  ready in 790 ms
+[2026-06-28 13:10:23] [client] 
+[2026-06-28 13:10:23] [client]   ➜  Local:   http://localhost:8001/
+[2026-06-28 13:10:23] [client]   ➜  Network: http://127.0.2.2:8001/
+[2026-06-28 13:10:23] [client]   ➜  Network: http://127.0.2.3:8001/
+[2026-06-28 13:10:23] [client]   ➜  Network: http://192.168.1.8:8001/
+[2026-06-28 13:10:23] [client]   ➜  Network: http://172.16.0.2:8001/
+[2026-06-28 13:12:07] [client] 13:12:07 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 13:22:58] [client] 13:22:58 [vite] http proxy error: /file/attachments/LaF8zowJDQ4vMgrMWq6sBt
+[2026-06-28 13:22:58] [client] AggregateError [ECONNREFUSED]: 
+[2026-06-28 13:22:58] [client]     at internalConnectMultiple (node:net:1193:18)
+[2026-06-28 13:22:58] [client]     at afterConnectMultiple (node:net:1783:7)
+[2026-06-28 13:22:58] [client] 13:22:58 [vite] http proxy error: /file/attachments/DJJS5mWqVwzeDjuK4CJYmX
+[2026-06-28 13:22:58] [client] AggregateError [ECONNREFUSED]: 
+[2026-06-28 13:22:58] [client]     at internalConnectMultiple (node:net:1193:18)
+[2026-06-28 13:22:58] [client]     at afterConnectMultiple (node:net:1783:7)
+[2026-06-28 13:22:58] [client] 13:22:58 [vite] http proxy error: /file/attachments/cHtcnvoj7sgyUUGdRH3u8s
+[2026-06-28 13:22:58] [client] AggregateError [ECONNREFUSED]: 
+[2026-06-28 13:22:58] [client]     at internalConnectMultiple (node:net:1193:18)
+[2026-06-28 13:22:58] [client]     at afterConnectMultiple (node:net:1783:7)
+[2026-06-28 13:41:21] [client] 13:41:21 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 13:43:16] [client] 13:43:16 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 14:52:30] [client] 14:52:30 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 14:55:20] [client] 14:55:20 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 14:56:29] [client] 14:56:29 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 14:57:30] [client] 14:57:30 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 14:58:11] [client] 14:58:11 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 15:00:43] [client] 15:00:43 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 15:03:47] [client] 15:03:47 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 15:05:50] [client] 15:05:50 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 15:07:30] [client] 15:07:30 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 15:15:37] [client] 15:15:37 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 15:18:02] [client] 15:18:02 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 15:20:54] [client] 15:20:54 [vite] (client) hmr update /src/pages/HomePage/sections/ImagePreview.tsx, /src/index.css
+[2026-06-28 15:21:03] [client] 15:21:03 [vite] (client) hmr update /src/pages/HomePage/sections/ImagePreview.tsx, /src/index.css
+[2026-06-28 15:21:20] [client] 15:21:20 [vite] (client) hmr update /src/pages/HomePage/sections/ImagePreview.tsx, /src/index.css
+[2026-06-28 15:37:58] [client] 15:37:58 [vite] (client) hmr update /src/pages/HomePage/sections/ImagePreview.tsx, /src/index.css
+[2026-06-28 15:38:25] [client] 15:38:25 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 15:38:46] [client] 15:38:46 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 15:39:34] [client] 15:39:34 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 17:26:47] [client] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[2026-06-28 17:26:47] [client] npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[2026-06-28 17:26:48] [client] `server.hmr.protocol/host/port/path/clientPort/timeout/server` is deprecated. Use `server.ws.*` instead. Note that this option may be set by a plugin. Set VITE_DEPRECATION_TRACE=1 to see where it is called.
+[2026-06-28 17:26:48] [client] 17:26:48 [vite] (client) Re-optimizing dependencies because vite config has changed
+[2026-06-28 17:26:48] [client] Failed to resolve dependency: @lark-apaas/miaoda-inspector, present in client 'optimizeDeps.include'
+[2026-06-28 17:26:48] [client] 
+[2026-06-28 17:26:48] [client]   VITE v8.1.0  ready in 1059 ms
+[2026-06-28 17:26:48] [client] 
+[2026-06-28 17:26:48] [client]   ➜  Local:   http://localhost:8001/
+[2026-06-28 17:26:48] [client]   ➜  Network: http://127.0.2.2:8001/
+[2026-06-28 17:26:48] [client]   ➜  Network: http://127.0.2.3:8001/
+[2026-06-28 17:26:48] [client]   ➜  Network: http://192.168.1.8:8001/
+[2026-06-28 17:26:48] [client]   ➜  Network: http://172.16.0.2:8001/
+[2026-06-28 19:29:54] [client] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[2026-06-28 19:29:54] [client] npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[2026-06-28 19:29:55] [client] `server.hmr.protocol/host/port/path/clientPort/timeout/server` is deprecated. Use `server.ws.*` instead. Note that this option may be set by a plugin. Set VITE_DEPRECATION_TRACE=1 to see where it is called.
+[2026-06-28 19:29:55] [client] 
+[2026-06-28 19:29:55] [client]   VITE v8.1.0  ready in 1050 ms
+[2026-06-28 19:29:55] [client] 
+[2026-06-28 19:29:55] [client]   ➜  Local:   http://localhost:8001/
+[2026-06-28 19:29:55] [client]   ➜  Network: http://127.0.2.2:8001/
+[2026-06-28 19:29:55] [client]   ➜  Network: http://127.0.2.3:8001/
+[2026-06-28 19:29:55] [client]   ➜  Network: http://192.168.1.8:8001/
+[2026-06-28 19:29:55] [client]   ➜  Network: http://172.16.0.2:8001/
+[2026-06-28 19:59:58] [client] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[2026-06-28 19:59:58] [client] npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[2026-06-28 19:59:58] [client] `server.hmr.protocol/host/port/path/clientPort/timeout/server` is deprecated. Use `server.ws.*` instead. Note that this option may be set by a plugin. Set VITE_DEPRECATION_TRACE=1 to see where it is called.
+[2026-06-28 19:59:58] [client] 
+[2026-06-28 19:59:58] [client]   VITE v8.1.0  ready in 288 ms
+[2026-06-28 19:59:58] [client] 
+[2026-06-28 19:59:58] [client]   ➜  Local:   http://localhost:8001/
+[2026-06-28 19:59:58] [client]   ➜  Network: http://127.0.2.2:8001/
+[2026-06-28 19:59:58] [client]   ➜  Network: http://127.0.2.3:8001/
+[2026-06-28 19:59:58] [client]   ➜  Network: http://192.168.1.8:8001/
+[2026-06-28 19:59:58] [client]   ➜  Network: http://172.16.0.2:8001/
+[2026-06-28 20:01:26] [client] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[2026-06-28 20:01:26] [client] npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[2026-06-28 20:01:27] [client] `server.hmr.protocol/host/port/path/clientPort/timeout/server` is deprecated. Use `server.ws.*` instead. Note that this option may be set by a plugin. Set VITE_DEPRECATION_TRACE=1 to see where it is called.
+[2026-06-28 20:01:27] [client] 
+[2026-06-28 20:01:27] [client]   VITE v8.1.0  ready in 276 ms
+[2026-06-28 20:01:27] [client] 
+[2026-06-28 20:01:27] [client]   ➜  Local:   http://localhost:8001/
+[2026-06-28 20:01:27] [client]   ➜  Network: http://127.0.2.2:8001/
+[2026-06-28 20:01:27] [client]   ➜  Network: http://127.0.2.3:8001/
+[2026-06-28 20:01:27] [client]   ➜  Network: http://192.168.1.8:8001/
+[2026-06-28 20:01:27] [client]   ➜  Network: http://172.16.0.2:8001/
+[2026-06-28 20:03:41] [client] 20:03:41 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 20:03:41] [client] 20:03:41 [vite] (client) Pre-transform error: Failed to load url /src/data/posts.ts (resolved id: /Users/yu/Desktop/vlog/talk1/src/data/posts.ts) in /Users/yu/Desktop/vlog/talk1/src/pages/HomePage/HomePage.tsx. Does the file exist?
+[2026-06-28 20:04:47] [client] 20:04:47 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 20:05:40] [client] 20:05:40 [vite] (client) hmr update /src/pages/HomePage/sections/ImagePreview.tsx, /src/index.css
+[2026-06-28 20:05:45] [client] 20:05:45 [vite] (client) hmr update /src/pages/HomePage/sections/ImagePreview1.tsx, /src/index.css
+[2026-06-28 20:05:45] [client] 20:05:45 [vite] (client) hmr update /src/pages/HomePage/sections/ImagePreview.tsx, /src/index.css
+[2026-06-28 20:11:39] [client] 20:11:39 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 20:18:40] [client] 20:18:40 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 20:23:05] [client] 20:23:05 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 20:29:38] [client] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[2026-06-28 20:29:38] [client] npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[2026-06-28 20:29:39] [client] `server.hmr.protocol/host/port/path/clientPort/timeout/server` is deprecated. Use `server.ws.*` instead. Note that this option may be set by a plugin. Set VITE_DEPRECATION_TRACE=1 to see where it is called.
+[2026-06-28 20:29:39] [client] 
+[2026-06-28 20:29:39] [client]   VITE v8.1.0  ready in 307 ms
+[2026-06-28 20:29:39] [client] 
+[2026-06-28 20:29:39] [client]   ➜  Local:   http://localhost:8001/
+[2026-06-28 20:29:39] [client]   ➜  Network: http://127.0.2.2:8001/
+[2026-06-28 20:29:39] [client]   ➜  Network: http://127.0.2.3:8001/
+[2026-06-28 20:29:39] [client]   ➜  Network: http://192.168.1.8:8001/
+[2026-06-28 20:29:39] [client]   ➜  Network: http://172.16.0.2:8001/
+[2026-06-28 20:30:10] [client] 20:30:10 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 20:33:42] [client] 20:33:42 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 20:33:42] [client] 20:33:42 [vite] (client) Pre-transform error: Transform failed with 1 error:
+[2026-06-28 20:33:42] [client] 
+[2026-06-28 20:33:42] [client] [31m[PARSE_ERROR] [0mIdentifier `MEMOS_TOKEN` has already been declared
+[2026-06-28 20:33:42] [client]      [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/api/memos.ts:5:14 [38;5;246m][0m
+[2026-06-28 20:33:42] [client]      [38;5;246m│[0m
+[2026-06-28 20:33:42] [client]  [38;5;246m  5 │[0m [38;5;249me[0m[38;5;249mx[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249m [0m[38;5;249mc[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249ms[0m[38;5;249mt[0m[38;5;249m [0mMEMOS_TOKEN[38;5;249m [0m[38;5;249m=[0m[38;5;249m [0m[38;5;249m'[0m[38;5;249mm[0m[38;5;249me[0m[38;5;249mm[0m[38;5;249mo[0m[38;5;249ms[0m[38;5;249m_[0m[38;5;249mp[0m[38;5;249ma[0m[38;5;249mt[0m[38;5;249m_[0m[38;5;249ma[0m[38;5;249mI[0m[38;5;249mU[0m[38;5;249ml[0m[38;5;249mu[0m[38;5;249m7[0m[38;5;249mU[0m[38;5;249mt[0m[38;5;249mB[0m[38;5;249mb[0m[38;5;249mX[0m[38;5;249mi[0m[38;5;249mb[0m[38;5;249mm[0m[38;5;249mD[0m[38;5;249m6[0m[38;5;249mW[0m[38;5;249mH[0m[38;5;249mC[0m[38;5;249mE[0m[38;5;249md[0m[38;5;249mQ[0m[38;5;249mM[0m[38;5;249m9[0m[38;5;249mf[0m[38;5;249mE[0m[38;5;249mc[0m[38;5;249m1[0m[38;5;249mM[0m[38;5;249mo[0m[38;5;249m4[0m[38;5;249m4[0m[38;5;249m'[0m[38;5;249m;[0m
+[2026-06-28 20:33:42] [client]  [38;5;240m    │[0m              ─────┬─────  
+[2026-06-28 20:33:42] [client]  [38;5;240m    │[0m                   ╰─────── `MEMOS_TOKEN` has already been declared here
+[2026-06-28 20:33:42] [client]  [38;5;240m    │[0m 
+[2026-06-28 20:33:42] [client]  [38;5;246m160 │[0m [38;5;249mc[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249ms[0m[38;5;249mt[0m[38;5;249m [0mMEMOS_TOKEN[38;5;249m [0m[38;5;249m=[0m[38;5;249m [0m[38;5;249m'[0m[38;5;249m你[0m[38;5;249m的[0m[38;5;249mt[0m[38;5;249mo[0m[38;5;249mk[0m[38;5;249me[0m[38;5;249mn[0m[38;5;249m'[0m[38;5;249m;[0m
+[2026-06-28 20:33:42] [client]  [38;5;240m    │[0m       ─────┬─────  
+[2026-06-28 20:33:42] [client]  [38;5;240m    │[0m            ╰─────── It can not be redeclared here
+[2026-06-28 20:33:42] [client] [38;5;246m─────╯[0m
+[2026-06-28 20:33:42] [client] 
+[2026-06-28 20:33:42] [client]   Plugin: vite:oxc
+[2026-06-28 20:33:42] [client]   File: /Users/yu/Desktop/vlog/talk1/src/api/memos.ts
+[2026-06-28 20:33:42] [client] 20:33:42 [vite] Internal server error: Transform failed with 1 error:
+[2026-06-28 20:33:42] [client] 
+[2026-06-28 20:33:42] [client] [31m[PARSE_ERROR] [0mIdentifier `MEMOS_TOKEN` has already been declared
+[2026-06-28 20:33:42] [client]      [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/api/memos.ts:5:14 [38;5;246m][0m
+[2026-06-28 20:33:42] [client]      [38;5;246m│[0m
+[2026-06-28 20:33:42] [client]  [38;5;246m  5 │[0m [38;5;249me[0m[38;5;249mx[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249m [0m[38;5;249mc[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249ms[0m[38;5;249mt[0m[38;5;249m [0mMEMOS_TOKEN[38;5;249m [0m[38;5;249m=[0m[38;5;249m [0m[38;5;249m'[0m[38;5;249mm[0m[38;5;249me[0m[38;5;249mm[0m[38;5;249mo[0m[38;5;249ms[0m[38;5;249m_[0m[38;5;249mp[0m[38;5;249ma[0m[38;5;249mt[0m[38;5;249m_[0m[38;5;249ma[0m[38;5;249mI[0m[38;5;249mU[0m[38;5;249ml[0m[38;5;249mu[0m[38;5;249m7[0m[38;5;249mU[0m[38;5;249mt[0m[38;5;249mB[0m[38;5;249mb[0m[38;5;249mX[0m[38;5;249mi[0m[38;5;249mb[0m[38;5;249mm[0m[38;5;249mD[0m[38;5;249m6[0m[38;5;249mW[0m[38;5;249mH[0m[38;5;249mC[0m[38;5;249mE[0m[38;5;249md[0m[38;5;249mQ[0m[38;5;249mM[0m[38;5;249m9[0m[38;5;249mf[0m[38;5;249mE[0m[38;5;249mc[0m[38;5;249m1[0m[38;5;249mM[0m[38;5;249mo[0m[38;5;249m4[0m[38;5;249m4[0m[38;5;249m'[0m[38;5;249m;[0m
+[2026-06-28 20:33:42] [client]  [38;5;240m    │[0m              ─────┬─────  
+[2026-06-28 20:33:42] [client]  [38;5;240m    │[0m                   ╰─────── `MEMOS_TOKEN` has already been declared here
+[2026-06-28 20:33:42] [client]  [38;5;240m    │[0m 
+[2026-06-28 20:33:42] [client]  [38;5;246m160 │[0m [38;5;249mc[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249ms[0m[38;5;249mt[0m[38;5;249m [0mMEMOS_TOKEN[38;5;249m [0m[38;5;249m=[0m[38;5;249m [0m[38;5;249m'[0m[38;5;249m你[0m[38;5;249m的[0m[38;5;249mt[0m[38;5;249mo[0m[38;5;249mk[0m[38;5;249me[0m[38;5;249mn[0m[38;5;249m'[0m[38;5;249m;[0m
+[2026-06-28 20:33:42] [client]  [38;5;240m    │[0m       ─────┬─────  
+[2026-06-28 20:33:42] [client]  [38;5;240m    │[0m            ╰─────── It can not be redeclared here
+[2026-06-28 20:33:42] [client] [38;5;246m─────╯[0m
+[2026-06-28 20:33:42] [client] 
+[2026-06-28 20:33:42] [client]   Plugin: vite:oxc
+[2026-06-28 20:33:42] [client]   File: /Users/yu/Desktop/vlog/talk1/src/api/memos.ts
+[2026-06-28 20:33:42] [client]       at transformWithOxc (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:3657:19)
+[2026-06-28 20:33:42] [client]       at TransformPluginContext.transform (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:3728:26)
+[2026-06-28 20:33:42] [client]       at EnvironmentPluginContainer.transform (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:29699:51)
+[2026-06-28 20:33:42] [client]       at async loadAndTransform (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:19725:26)
+[2026-06-28 20:33:42] [client]       at async viteTransformMiddleware (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:24149:20)
+[2026-06-28 20:33:47] [client] 20:33:47 [vite] Internal server error: Transform failed with 1 error:
+[2026-06-28 20:33:47] [client] 
+[2026-06-28 20:33:47] [client] [31m[PARSE_ERROR] [0mIdentifier `MEMOS_TOKEN` has already been declared
+[2026-06-28 20:33:47] [client]      [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/api/memos.ts:5:14 [38;5;246m][0m
+[2026-06-28 20:33:47] [client]      [38;5;246m│[0m
+[2026-06-28 20:33:47] [client]  [38;5;246m  5 │[0m [38;5;249me[0m[38;5;249mx[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249m [0m[38;5;249mc[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249ms[0m[38;5;249mt[0m[38;5;249m [0mMEMOS_TOKEN[38;5;249m [0m[38;5;249m=[0m[38;5;249m [0m[38;5;249m'[0m[38;5;249mm[0m[38;5;249me[0m[38;5;249mm[0m[38;5;249mo[0m[38;5;249ms[0m[38;5;249m_[0m[38;5;249mp[0m[38;5;249ma[0m[38;5;249mt[0m[38;5;249m_[0m[38;5;249ma[0m[38;5;249mI[0m[38;5;249mU[0m[38;5;249ml[0m[38;5;249mu[0m[38;5;249m7[0m[38;5;249mU[0m[38;5;249mt[0m[38;5;249mB[0m[38;5;249mb[0m[38;5;249mX[0m[38;5;249mi[0m[38;5;249mb[0m[38;5;249mm[0m[38;5;249mD[0m[38;5;249m6[0m[38;5;249mW[0m[38;5;249mH[0m[38;5;249mC[0m[38;5;249mE[0m[38;5;249md[0m[38;5;249mQ[0m[38;5;249mM[0m[38;5;249m9[0m[38;5;249mf[0m[38;5;249mE[0m[38;5;249mc[0m[38;5;249m1[0m[38;5;249mM[0m[38;5;249mo[0m[38;5;249m4[0m[38;5;249m4[0m[38;5;249m'[0m[38;5;249m;[0m
+[2026-06-28 20:33:47] [client]  [38;5;240m    │[0m              ─────┬─────  
+[2026-06-28 20:33:47] [client]  [38;5;240m    │[0m                   ╰─────── `MEMOS_TOKEN` has already been declared here
+[2026-06-28 20:33:47] [client]  [38;5;240m    │[0m 
+[2026-06-28 20:33:47] [client]  [38;5;246m160 │[0m [38;5;249mc[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249ms[0m[38;5;249mt[0m[38;5;249m [0mMEMOS_TOKEN[38;5;249m [0m[38;5;249m=[0m[38;5;249m [0m[38;5;249m'[0m[38;5;249m你[0m[38;5;249m的[0m[38;5;249mt[0m[38;5;249mo[0m[38;5;249mk[0m[38;5;249me[0m[38;5;249mn[0m[38;5;249m'[0m[38;5;249m;[0m
+[2026-06-28 20:33:47] [client]  [38;5;240m    │[0m       ─────┬─────  
+[2026-06-28 20:33:47] [client]  [38;5;240m    │[0m            ╰─────── It can not be redeclared here
+[2026-06-28 20:33:47] [client] [38;5;246m─────╯[0m
+[2026-06-28 20:33:47] [client] 
+[2026-06-28 20:33:47] [client]   Plugin: vite:oxc
+[2026-06-28 20:33:47] [client]   File: /Users/yu/Desktop/vlog/talk1/src/api/memos.ts
+[2026-06-28 20:33:47] [client]       at transformWithOxc (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:3657:19)
+[2026-06-28 20:33:47] [client]       at TransformPluginContext.transform (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:3728:26)
+[2026-06-28 20:33:47] [client]       at EnvironmentPluginContainer.transform (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:29699:51)
+[2026-06-28 20:33:47] [client]       at async loadAndTransform (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:19725:26)
+[2026-06-28 20:33:47] [client]       at async viteTransformMiddleware (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:24149:20)
+[2026-06-28 20:33:54] [client] 20:33:54 [vite] Internal server error: Transform failed with 1 error:
+[2026-06-28 20:33:54] [client] 
+[2026-06-28 20:33:54] [client] [31m[PARSE_ERROR] [0mIdentifier `MEMOS_TOKEN` has already been declared
+[2026-06-28 20:33:54] [client]      [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/api/memos.ts:5:14 [38;5;246m][0m
+[2026-06-28 20:33:54] [client]      [38;5;246m│[0m
+[2026-06-28 20:33:54] [client]  [38;5;246m  5 │[0m [38;5;249me[0m[38;5;249mx[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249m [0m[38;5;249mc[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249ms[0m[38;5;249mt[0m[38;5;249m [0mMEMOS_TOKEN[38;5;249m [0m[38;5;249m=[0m[38;5;249m [0m[38;5;249m'[0m[38;5;249mm[0m[38;5;249me[0m[38;5;249mm[0m[38;5;249mo[0m[38;5;249ms[0m[38;5;249m_[0m[38;5;249mp[0m[38;5;249ma[0m[38;5;249mt[0m[38;5;249m_[0m[38;5;249ma[0m[38;5;249mI[0m[38;5;249mU[0m[38;5;249ml[0m[38;5;249mu[0m[38;5;249m7[0m[38;5;249mU[0m[38;5;249mt[0m[38;5;249mB[0m[38;5;249mb[0m[38;5;249mX[0m[38;5;249mi[0m[38;5;249mb[0m[38;5;249mm[0m[38;5;249mD[0m[38;5;249m6[0m[38;5;249mW[0m[38;5;249mH[0m[38;5;249mC[0m[38;5;249mE[0m[38;5;249md[0m[38;5;249mQ[0m[38;5;249mM[0m[38;5;249m9[0m[38;5;249mf[0m[38;5;249mE[0m[38;5;249mc[0m[38;5;249m1[0m[38;5;249mM[0m[38;5;249mo[0m[38;5;249m4[0m[38;5;249m4[0m[38;5;249m'[0m[38;5;249m;[0m
+[2026-06-28 20:33:54] [client]  [38;5;240m    │[0m              ─────┬─────  
+[2026-06-28 20:33:54] [client]  [38;5;240m    │[0m                   ╰─────── `MEMOS_TOKEN` has already been declared here
+[2026-06-28 20:33:54] [client]  [38;5;240m    │[0m 
+[2026-06-28 20:33:54] [client]  [38;5;246m160 │[0m [38;5;249mc[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249ms[0m[38;5;249mt[0m[38;5;249m [0mMEMOS_TOKEN[38;5;249m [0m[38;5;249m=[0m[38;5;249m [0m[38;5;249m'[0m[38;5;249m你[0m[38;5;249m的[0m[38;5;249mt[0m[38;5;249mo[0m[38;5;249mk[0m[38;5;249me[0m[38;5;249mn[0m[38;5;249m'[0m[38;5;249m;[0m
+[2026-06-28 20:33:54] [client]  [38;5;240m    │[0m       ─────┬─────  
+[2026-06-28 20:33:54] [client]  [38;5;240m    │[0m            ╰─────── It can not be redeclared here
+[2026-06-28 20:33:54] [client] [38;5;246m─────╯[0m
+[2026-06-28 20:33:54] [client] 
+[2026-06-28 20:33:54] [client]   Plugin: vite:oxc
+[2026-06-28 20:33:54] [client]   File: /Users/yu/Desktop/vlog/talk1/src/api/memos.ts
+[2026-06-28 20:33:54] [client]       at transformWithOxc (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:3657:19)
+[2026-06-28 20:33:54] [client]       at TransformPluginContext.transform (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:3728:26)
+[2026-06-28 20:33:54] [client]       at EnvironmentPluginContainer.transform (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:29699:51)
+[2026-06-28 20:33:54] [client]       at async loadAndTransform (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:19725:26)
+[2026-06-28 20:33:54] [client]       at async viteTransformMiddleware (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:24149:20)
+[2026-06-28 20:34:54] [client] 20:34:54 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 20:34:54] [client] 20:34:54 [vite] (client) Pre-transform error: Failed to resolve import "./index" from "src/api/memos.ts". Does the file exist?
+[2026-06-28 20:34:54] [client]   Plugin: vite:import-analysis
+[2026-06-28 20:34:54] [client]   File: /Users/yu/Desktop/vlog/talk1/src/api/memos.ts:159:27
+[2026-06-28 20:34:54] [client]   89 |  * 上传资源/图片
+[2026-06-28 20:34:54] [client]   90 |  */
+[2026-06-28 20:34:54] [client]   91 |  import { API_PREFIX } from "./index";
+[2026-06-28 20:34:54] [client]      |                              ^
+[2026-06-28 20:34:54] [client]   92 |  /**
+[2026-06-28 20:34:54] [client]   93 |  * 上传资源/图片
+[2026-06-28 20:34:54] [client] 20:34:54 [vite] Internal server error: Failed to resolve import "./index" from "src/api/memos.ts". Does the file exist?
+[2026-06-28 20:34:54] [client]   Plugin: vite:import-analysis
+[2026-06-28 20:34:54] [client]   File: /Users/yu/Desktop/vlog/talk1/src/api/memos.ts:159:27
+[2026-06-28 20:34:54] [client]   89 |  * 上传资源/图片
+[2026-06-28 20:34:54] [client]   90 |  */
+[2026-06-28 20:34:54] [client]   91 |  import { API_PREFIX } from "./index";
+[2026-06-28 20:34:54] [client]      |                              ^
+[2026-06-28 20:34:54] [client]   92 |  /**
+[2026-06-28 20:34:54] [client]   93 |  * 上传资源/图片
+[2026-06-28 20:34:54] [client]       at TransformPluginContext._formatLog (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:29914:39)
+[2026-06-28 20:34:54] [client]       at TransformPluginContext.error (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:29911:14)
+[2026-06-28 20:34:54] [client]       at normalizeUrl (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:26975:18)
+[2026-06-28 20:34:54] [client]       at async file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:27038:30
+[2026-06-28 20:34:54] [client]       at async Promise.all (index 1)
+[2026-06-28 20:34:54] [client]       at async TransformPluginContext.transform (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:27006:4)
+[2026-06-28 20:34:54] [client]       at async EnvironmentPluginContainer.transform (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:29699:14)
+[2026-06-28 20:34:54] [client]       at async loadAndTransform (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:19725:26)
+[2026-06-28 20:34:54] [client]       at async viteTransformMiddleware (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:24149:20)
+[2026-06-28 20:34:58] [client] 20:34:58 [vite] Internal server error: Failed to resolve import "./index" from "src/api/memos.ts". Does the file exist?
+[2026-06-28 20:34:58] [client]   Plugin: vite:import-analysis
+[2026-06-28 20:34:58] [client]   File: /Users/yu/Desktop/vlog/talk1/src/api/memos.ts:159:27
+[2026-06-28 20:34:58] [client]   89 |  * 上传资源/图片
+[2026-06-28 20:34:58] [client]   90 |  */
+[2026-06-28 20:34:58] [client]   91 |  import { API_PREFIX } from "./index";
+[2026-06-28 20:34:58] [client]      |                              ^
+[2026-06-28 20:34:58] [client]   92 |  /**
+[2026-06-28 20:34:58] [client]   93 |  * 上传资源/图片
+[2026-06-28 20:34:58] [client]       at TransformPluginContext._formatLog (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:29914:39)
+[2026-06-28 20:34:58] [client]       at TransformPluginContext.error (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:29911:14)
+[2026-06-28 20:34:58] [client]       at normalizeUrl (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:26975:18)
+[2026-06-28 20:34:58] [client]       at async file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:27038:30
+[2026-06-28 20:34:58] [client]       at async Promise.all (index 1)
+[2026-06-28 20:34:58] [client]       at async TransformPluginContext.transform (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:27006:4)
+[2026-06-28 20:34:58] [client]       at async EnvironmentPluginContainer.transform (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:29699:14)
+[2026-06-28 20:34:58] [client]       at async loadAndTransform (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:19725:26)
+[2026-06-28 20:34:58] [client]       at async viteTransformMiddleware (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:24149:20)
+[2026-06-28 20:34:58] [client] 20:34:58 [vite] Internal server error: Failed to resolve import "./index" from "src/api/memos.ts". Does the file exist?
+[2026-06-28 20:34:58] [client]   Plugin: vite:import-analysis
+[2026-06-28 20:34:58] [client]   File: /Users/yu/Desktop/vlog/talk1/src/api/memos.ts:159:27
+[2026-06-28 20:34:58] [client]   89 |  * 上传资源/图片
+[2026-06-28 20:34:58] [client]   90 |  */
+[2026-06-28 20:34:58] [client]   91 |  import { API_PREFIX } from "./index";
+[2026-06-28 20:34:58] [client]      |                              ^
+[2026-06-28 20:34:58] [client]   92 |  /**
+[2026-06-28 20:34:58] [client]   93 |  * 上传资源/图片
+[2026-06-28 20:34:58] [client]       at TransformPluginContext._formatLog (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:29914:39)
+[2026-06-28 20:34:58] [client]       at TransformPluginContext.error (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:29911:14)
+[2026-06-28 20:34:58] [client]       at normalizeUrl (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:26975:18)
+[2026-06-28 20:34:58] [client]       at async file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:27038:30
+[2026-06-28 20:34:58] [client]       at async Promise.all (index 1)
+[2026-06-28 20:34:58] [client]       at async TransformPluginContext.transform (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:27006:4)
+[2026-06-28 20:34:58] [client]       at async EnvironmentPluginContainer.transform (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:29699:14)
+[2026-06-28 20:34:58] [client]       at async loadAndTransform (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:19725:26)
+[2026-06-28 20:34:58] [client]       at async viteTransformMiddleware (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:24149:20)
+[2026-06-28 20:34:59] [client] 20:34:59 [vite] Internal server error: Failed to resolve import "./index" from "src/api/memos.ts". Does the file exist?
+[2026-06-28 20:34:59] [client]   Plugin: vite:import-analysis
+[2026-06-28 20:34:59] [client]   File: /Users/yu/Desktop/vlog/talk1/src/api/memos.ts:159:27
+[2026-06-28 20:34:59] [client]   89 |  * 上传资源/图片
+[2026-06-28 20:34:59] [client]   90 |  */
+[2026-06-28 20:34:59] [client]   91 |  import { API_PREFIX } from "./index";
+[2026-06-28 20:34:59] [client]      |                              ^
+[2026-06-28 20:34:59] [client]   92 |  /**
+[2026-06-28 20:34:59] [client]   93 |  * 上传资源/图片
+[2026-06-28 20:34:59] [client]       at TransformPluginContext._formatLog (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:29914:39)
+[2026-06-28 20:34:59] [client]       at TransformPluginContext.error (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:29911:14)
+[2026-06-28 20:34:59] [client]       at normalizeUrl (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:26975:18)
+[2026-06-28 20:34:59] [client]       at async file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:27038:30
+[2026-06-28 20:34:59] [client]       at async Promise.all (index 1)
+[2026-06-28 20:34:59] [client]       at async TransformPluginContext.transform (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:27006:4)
+[2026-06-28 20:34:59] [client]       at async EnvironmentPluginContainer.transform (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:29699:14)
+[2026-06-28 20:34:59] [client]       at async loadAndTransform (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:19725:26)
+[2026-06-28 20:34:59] [client]       at async viteTransformMiddleware (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:24149:20)
+[2026-06-28 20:34:59] [client] 20:34:59 [vite] Internal server error: Failed to resolve import "./index" from "src/api/memos.ts". Does the file exist?
+[2026-06-28 20:34:59] [client]   Plugin: vite:import-analysis
+[2026-06-28 20:34:59] [client]   File: /Users/yu/Desktop/vlog/talk1/src/api/memos.ts:159:27
+[2026-06-28 20:34:59] [client]   89 |  * 上传资源/图片
+[2026-06-28 20:34:59] [client]   90 |  */
+[2026-06-28 20:34:59] [client]   91 |  import { API_PREFIX } from "./index";
+[2026-06-28 20:34:59] [client]      |                              ^
+[2026-06-28 20:34:59] [client]   92 |  /**
+[2026-06-28 20:34:59] [client]   93 |  * 上传资源/图片
+[2026-06-28 20:34:59] [client]       at TransformPluginContext._formatLog (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:29914:39)
+[2026-06-28 20:34:59] [client]       at TransformPluginContext.error (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:29911:14)
+[2026-06-28 20:34:59] [client]       at normalizeUrl (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:26975:18)
+[2026-06-28 20:34:59] [client]       at async file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:27038:30
+[2026-06-28 20:34:59] [client]       at async Promise.all (index 1)
+[2026-06-28 20:34:59] [client]       at async TransformPluginContext.transform (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:27006:4)
+[2026-06-28 20:34:59] [client]       at async EnvironmentPluginContainer.transform (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:29699:14)
+[2026-06-28 20:34:59] [client]       at async loadAndTransform (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:19725:26)
+[2026-06-28 20:34:59] [client]       at async viteTransformMiddleware (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:24149:20)
+[2026-06-28 20:40:15] [client] 20:40:15 [vite] (client) hmr update /src/pages/HomePage/HomePage.tsx, /src/index.css
+[2026-06-28 20:57:18] [client] 20:57:18 [vite] (client) hmr update /src/pages/HomePage/sections/PostCard.tsx, /src/index.css
+[2026-06-28 20:57:18] [client] 20:57:18 [vite] Internal server error: Transform failed with 1 error:
+[2026-06-28 20:57:18] [client] 
+[2026-06-28 20:57:18] [client] [31m[PARSE_ERROR] [0mUnexpected token. Did you mean `{'}'}` or `&rbrace;`?
+[2026-06-28 20:57:18] [client]      [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/pages/HomePage/sections/PostCard.tsx:185:15 [38;5;246m][0m
+[2026-06-28 20:57:18] [client]      [38;5;246m│[0m
+[2026-06-28 20:57:18] [client]  [38;5;246m185 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m<[0m[38;5;249m/[0m[38;5;249md[0m[38;5;249mi[0m[38;5;249mv[0m[38;5;249m>[0m[38;5;249m*[0m[38;5;249m/[0m[38;5;249m}[0m
+[2026-06-28 20:57:18] [client]  [38;5;240m    │[0m               │ 
+[2026-06-28 20:57:18] [client]  [38;5;240m    │[0m               ╰─ 
+[2026-06-28 20:57:18] [client] [38;5;246m─────╯[0m
+[2026-06-28 20:57:18] [client] 
+[2026-06-28 20:57:18] [client]   Plugin: vite:oxc
+[2026-06-28 20:57:18] [client]   File: /Users/yu/Desktop/vlog/talk1/src/pages/HomePage/sections/PostCard.tsx
+[2026-06-28 20:57:18] [client]       at transformWithOxc (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:3657:19)
+[2026-06-28 20:57:18] [client]       at TransformPluginContext.transform (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:3728:26)
+[2026-06-28 20:57:18] [client]       at EnvironmentPluginContainer.transform (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:29699:51)
+[2026-06-28 20:57:18] [client]       at async loadAndTransform (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:19725:26)
+[2026-06-28 20:57:18] [client]       at async viteTransformMiddleware (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:24149:20)
+[2026-06-28 20:57:26] [client] 20:57:26 [vite] (client) Pre-transform error: Transform failed with 1 error:
+[2026-06-28 20:57:26] [client] 
+[2026-06-28 20:57:26] [client] [31m[PARSE_ERROR] [0mUnexpected token. Did you mean `{'}'}` or `&rbrace;`?
+[2026-06-28 20:57:26] [client]      [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/pages/HomePage/sections/PostCard.tsx:185:15 [38;5;246m][0m
+[2026-06-28 20:57:26] [client]      [38;5;246m│[0m
+[2026-06-28 20:57:26] [client]  [38;5;246m185 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m<[0m[38;5;249m/[0m[38;5;249md[0m[38;5;249mi[0m[38;5;249mv[0m[38;5;249m>[0m[38;5;249m*[0m[38;5;249m/[0m[38;5;249m}[0m
+[2026-06-28 20:57:26] [client]  [38;5;240m    │[0m               │ 
+[2026-06-28 20:57:26] [client]  [38;5;240m    │[0m               ╰─ 
+[2026-06-28 20:57:26] [client] [38;5;246m─────╯[0m
+[2026-06-28 20:57:26] [client] 
+[2026-06-28 20:57:26] [client]   Plugin: vite:oxc
+[2026-06-28 20:57:26] [client]   File: /Users/yu/Desktop/vlog/talk1/src/pages/HomePage/sections/PostCard.tsx
+[2026-06-28 20:57:26] [client] 20:57:26 [vite] Internal server error: Transform failed with 1 error:
+[2026-06-28 20:57:26] [client] 
+[2026-06-28 20:57:26] [client] [31m[PARSE_ERROR] [0mUnexpected token. Did you mean `{'}'}` or `&rbrace;`?
+[2026-06-28 20:57:26] [client]      [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/pages/HomePage/sections/PostCard.tsx:185:15 [38;5;246m][0m
+[2026-06-28 20:57:26] [client]      [38;5;246m│[0m
+[2026-06-28 20:57:26] [client]  [38;5;246m185 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m<[0m[38;5;249m/[0m[38;5;249md[0m[38;5;249mi[0m[38;5;249mv[0m[38;5;249m>[0m[38;5;249m*[0m[38;5;249m/[0m[38;5;249m}[0m
+[2026-06-28 20:57:26] [client]  [38;5;240m    │[0m               │ 
+[2026-06-28 20:57:26] [client]  [38;5;240m    │[0m               ╰─ 
+[2026-06-28 20:57:26] [client] [38;5;246m─────╯[0m
+[2026-06-28 20:57:26] [client] 
+[2026-06-28 20:57:26] [client]   Plugin: vite:oxc
+[2026-06-28 20:57:26] [client]   File: /Users/yu/Desktop/vlog/talk1/src/pages/HomePage/sections/PostCard.tsx
+[2026-06-28 20:57:26] [client]       at transformWithOxc (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:3657:19)
+[2026-06-28 20:57:26] [client]       at TransformPluginContext.transform (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:3728:26)
+[2026-06-28 20:57:26] [client]       at EnvironmentPluginContainer.transform (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:29699:51)
+[2026-06-28 20:57:26] [client]       at async loadAndTransform (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:19725:26)
+[2026-06-28 20:57:26] [client]       at async viteTransformMiddleware (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:24149:20)
+[2026-06-28 20:57:32] [client] 20:57:32 [vite] Internal server error: Transform failed with 1 error:
+[2026-06-28 20:57:32] [client] 
+[2026-06-28 20:57:32] [client] [31m[PARSE_ERROR] [0mUnexpected token. Did you mean `{'}'}` or `&rbrace;`?
+[2026-06-28 20:57:32] [client]      [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/pages/HomePage/sections/PostCard.tsx:185:15 [38;5;246m][0m
+[2026-06-28 20:57:32] [client]      [38;5;246m│[0m
+[2026-06-28 20:57:32] [client]  [38;5;246m185 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m<[0m[38;5;249m/[0m[38;5;249md[0m[38;5;249mi[0m[38;5;249mv[0m[38;5;249m>[0m[38;5;249m*[0m[38;5;249m/[0m[38;5;249m}[0m
+[2026-06-28 20:57:32] [client]  [38;5;240m    │[0m               │ 
+[2026-06-28 20:57:32] [client]  [38;5;240m    │[0m               ╰─ 
+[2026-06-28 20:57:32] [client] [38;5;246m─────╯[0m
+[2026-06-28 20:57:32] [client] 
+[2026-06-28 20:57:32] [client]   Plugin: vite:oxc
+[2026-06-28 20:57:32] [client]   File: /Users/yu/Desktop/vlog/talk1/src/pages/HomePage/sections/PostCard.tsx
+[2026-06-28 20:57:32] [client]       at transformWithOxc (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:3657:19)
+[2026-06-28 20:57:32] [client]       at TransformPluginContext.transform (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:3728:26)
+[2026-06-28 20:57:32] [client]       at EnvironmentPluginContainer.transform (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:29699:51)
+[2026-06-28 20:57:32] [client]       at async loadAndTransform (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:19725:26)
+[2026-06-28 20:57:32] [client]       at async viteTransformMiddleware (file:///Users/yu/Desktop/vlog/talk1/node_modules/.pnpm/vite@8.1.0_@types+node@24.13.2_jiti@2.7.0_terser@5.48.0/node_modules/vite/dist/node/chunks/node.js:24149:20)
+[2026-06-28 20:58:08] [client] 20:58:08 [vite] (client) hmr update /src/pages/HomePage/sections/PostCard.tsx, /src/index.css
+[2026-06-28 20:58:54] [client] 20:58:54 [vite] (client) hmr update /src/pages/HomePage/sections/ImagePreview2.tsx, /src/index.css
+[2026-06-28 21:05:04] [client] 21:05:04 [vite] (client) hmr update /src/pages/HomePage/sections/PostCard.tsx, /src/index.css
+[2026-06-28 21:05:54] [client] 21:05:54 [vite] (client) hmr update /src/pages/HomePage/sections/PostCard.tsx, /src/index.css
+[2026-06-28 21:07:47] [client] 21:07:47 [vite] (client) hmr update /src/pages/HomePage/sections/PostCard.tsx, /src/index.css
+[2026-06-28 21:08:17] [client] 21:08:17 [vite] (client) hmr update /src/pages/HomePage/sections/PostCard.tsx, /src/index.css
+[2026-06-28 21:08:24] [client] 21:08:24 [vite] (client) hmr update /src/pages/HomePage/sections/PostCard.tsx, /src/index.css
+[2026-06-28 21:14:39] [client] 21:14:39 [vite] (client) hmr update /src/pages/HomePage/sections/PostCard.tsx, /src/index.css

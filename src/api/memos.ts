@@ -10,8 +10,10 @@ const logger = {
   error: (msg: string) => console.error('[Memos API]', msg),
 };
 
+// 修复：增加 filename 字段，页面拼接图片路径必须用到
 interface MemoAttachment {
   name: string;
+  filename: string;
   type: string;
   size: string;
   externalLink?: string;
@@ -52,6 +54,7 @@ async function request<T>(endpoint: string, options?: RequestInit): Promise<T> {
   logger.info(`${options?.method || 'GET'} ${url}`);
 
   const res = await fetch(url, {
+    credentials: 'include',
     ...options,
     headers: {
       'Content-Type': 'application/json',
@@ -91,7 +94,7 @@ export async function getMemos(params: {
 export async function createMemo(params: {
   content: string;
   visibility?: string;
-  attachments?: { name: string; type: string; size: string; externalLink?: string }[];
+  attachments?: { name: string; filename: string; type: string; size: string; externalLink?: string }[];
 }): Promise<Memo> {
   return request<Memo>('/api/v1/memos', {
     method: 'POST',
@@ -154,21 +157,24 @@ export async function createMemoComment(name: string, content: string): Promise<
 }
 
 /**
- * 上传资源/图片
+ * 上传资源/图片（核心修改）
  */
 export async function uploadResource(file: File): Promise<MemoAttachment> {
   const formData = new FormData();
   formData.append('file', file);
 
-  const url = `${MEMOS_BASE_URL}/api/v1/resources/blob`;
+  // 统一使用 MEMOS_BASE_URL，自动区分开发代理/生产域名
+  const url = `${MEMOS_BASE_URL}/api/v1/attachments/`;
   logger.info(`Upload: POST ${url}`);
 
   const res = await fetch(url, {
     method: 'POST',
     headers: {
       Authorization: `Bearer ${MEMOS_TOKEN}`,
+      // 不要加 Content-Type，浏览器自动携带 multipart/form-data
     },
     body: formData,
+    credentials: 'include', // 新增携带会话凭证
   });
 
   if (!res.ok) {
