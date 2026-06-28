@@ -1,8 +1,21 @@
-
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import path from 'path'
+import { defineConfig } from '@lark-apaas/coding-preset-vite-react'
 
 export default defineConfig({
-  base: './', // 相对路径，本地打开html不404资源
-  plugins: [react()],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+      '@shared': path.resolve(__dirname, 'shared'),
+    },
+  },
+  server: {
+    proxy: {
+      // 开发环境代理 memos API，解决跨域问题
+      '/memos-api': {
+        target: 'https://memo.z2m.store',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/memos-api/, ''),
+      },
+    },
+  },
 })
