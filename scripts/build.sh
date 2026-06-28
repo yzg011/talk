@@ -18,7 +18,7 @@ rm -rf "$ROOT/dist"
 # 1. Vite 构建 → dist/client/
 npx vite build --outDir "$ROOT/dist/client" --emptyOutDir
 
-# 2. HTML + assets 全部复制到 dist/output（核心修改）
+# 2. HTML + assets 全部复制到 dist/output
 mkdir -p "$OUTPUT"
 # 复制html、routes.json
 find "$ROOT/dist/client" -maxdepth 1 \( -name '*.html' -o -name 'routes.json' \) -exec cp {} "$OUTPUT/" \;
@@ -27,16 +27,20 @@ if [ -d "$ROOT/dist/client/assets" ]; then
   cp -r "$ROOT/dist/client/assets" "$OUTPUT/"
 fi
 
-# 3. assets 再备份一份到 output_resource（保留原有逻辑，不删）
+# 3. assets 再备份一份到 output_resource
 if [ -d "$ROOT/dist/client/assets" ]; then
   mkdir -p "$OUTPUT_RESOURCE"
   cp -r "$ROOT/dist/client/assets" "$OUTPUT_RESOURCE/"
 fi
 
 # 4. 私有静态资源 → dist/output_static/
+# 替换原 rsync，先全部复制，再删除指定后缀源码文件
 if [ -d "$ROOT/shared/static" ]; then
   mkdir -p "$OUTPUT_STATIC"
-  rsync -a --exclude='*.ts' --exclude='*.tsx' --exclude='*.js' --exclude='*.jsx' "$ROOT/shared/static/" "$OUTPUT_STATIC/"
+  # 完整复制静态目录
+  cp -r "$ROOT/shared/static/." "$OUTPUT_STATIC/"
+  # 删除 ts/tsx/js/jsx 源码文件，实现原rsync排除效果
+  find "$OUTPUT_STATIC" -type f \( -name "*.ts" -o -name "*.tsx" -o -name "*.js" -o -name "*.jsx" \) -delete
 fi
 
 # 5. capability 配置 → dist/output_capabilities/
