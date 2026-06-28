@@ -7,9 +7,6 @@ OUTPUT_RESOURCE="$ROOT/dist/output_resource"
 OUTPUT_STATIC="$ROOT/dist/output_static"
 
 # 映射平台环境变量到 preset 期望的变量名
-#   MIAODA_APP_ID            → /app/<appId> 作为客户端 base path
-#   MIAODA_RESOURCE_CDN_PREFIX → assets (JS/CSS) 的 CDN 前缀
-# CLI 注入约定见 miaoda-cli src/services/deploy/modern/atoms/build.ts
 export CLIENT_BASE_PATH="${MIAODA_APP_ID:+/app/$MIAODA_APP_ID}"
 export ASSETS_CDN_PATH="${MIAODA_RESOURCE_CDN_PREFIX:-/}"
 export STATIC_ASSETS_BASE_URL="${MIAODA_STATIC_CDN_PREFIX}"
@@ -18,23 +15,28 @@ export NODE_ENV="${NODE_ENV:-production}"
 # 清理
 rm -rf "$ROOT/dist"
 
-# 1. Vite 构建 → dist/client/（相对于项目根目录输出）
+# 1. Vite 构建 → dist/client/
 npx vite build --outDir "$ROOT/dist/client" --emptyOutDir
 
-# 2. HTML → dist/output/
+# 2. HTML + assets 全部复制到 dist/output（核心修改）
 mkdir -p "$OUTPUT"
+# 复制html、routes.json
 find "$ROOT/dist/client" -maxdepth 1 \( -name '*.html' -o -name 'routes.json' \) -exec cp {} "$OUTPUT/" \;
+# 把 assets 一并复制到 output，保证页面能加载资源
+if [ -d "$ROOT/dist/client/assets" ]; then
+  cp -r "$ROOT/dist/client/assets" "$OUTPUT/"
+fi
 
-# 3. assets/ → dist/output_resource/（JS/CSS/字体，上传到 CDN）
+# 3. assets 再备份一份到 output_resource（保留原有逻辑，不删）
 if [ -d "$ROOT/dist/client/assets" ]; then
   mkdir -p "$OUTPUT_RESOURCE"
   cp -r "$ROOT/dist/client/assets" "$OUTPUT_RESOURCE/"
 fi
 
-# 4. 私有静态资源 → dist/output_static/（排除代码文件）
+# 4. 私有静态资源 → dist/output_static/
 if [ -d "$ROOT/shared/static" ]; then
   mkdir -p "$OUTPUT_STATIC"
-
+  rsync -a --exclude='*.ts' --exclude='*.tsx' --exclude='*.js' --exclude='*.jsx' "$ROOT/shared/static/" "$OUTPUT_STATIC/"
 fi
 
 # 5. capability 配置 → dist/output_capabilities/
