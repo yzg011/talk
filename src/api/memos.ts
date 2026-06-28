@@ -1,7 +1,7 @@
 // EXPORTS: getMemos, createMemo, deleteMemo, likeMemo, unlikeMemo, getMemoComments, createMemoComment, uploadResource, MEMOS_BASE_URL, MEMOS_TOKEN
 
 // 开发环境使用 Vite 代理解决跨域，生产环境使用真实地址
-export const MEMOS_BASE_URL = import.meta.env.DEV ? '/memos-api' : 'https://memo.z2m.store';
+export const MEMOS_BASE_URL = '/memos-api';
 export const MEMOS_TOKEN = 'memos_pat_aIUlu7UtBbXibmD6WHCEdQM9fEc1Mo44';
 
 // 简单的 logger，替代 lark-apaas 的 logger，避免本地跨域错误
