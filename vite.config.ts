@@ -8,14 +8,5 @@ export default defineConfig({
       '@shared': path.resolve(__dirname, 'shared'),
     },
   },
-  server: {
-    proxy: {
-      // 开发环境代理 memos API，解决跨域问题
-      '/memos-api': {
-        target: 'https://memo.z2m.store',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/memos-api/, ''),
-      },
-    },
-  },
 })
+
