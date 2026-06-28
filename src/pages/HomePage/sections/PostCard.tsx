@@ -1,6 +1,5 @@
 import { useState, useCallback, useEffect, type FormEvent } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { toast } from 'sonner';
 import { Heart, MessageCircle, Trash2, Send, ChevronDown, ChevronUp, Clock, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
@@ -45,13 +44,34 @@ export default function PostCard({
   const [replyText, setReplyText] = useState('');
   const [submittingReply, setSubmittingReply] = useState(false);
   const [deleting, setDeleting] = useState(false);
+  // 仅无评论打开时才启用首次加载标记
+  const [isFirstOpen, setIsFirstOpen] = useState(false);
 
-  // 展开评论时加载评论数据
+  // 展开评论
   useEffect(() => {
-    if (showComments && onLoadComments && post.replies.length === 0 && !loadingComments) {
-      onLoadComments();
+    if (showComments) {
+      // 关键判断：已有评论，不开启加载占位
+      if (post.replies.length > 0) {
+        setIsFirstOpen(false);
+      } else {
+        // 无评论，打开时启用加载标记
+        setIsFirstOpen(true);
+        if (onLoadComments && !loadingComments) {
+          onLoadComments();
+        }
+      }
+    } else {
+      setIsFirstOpen(false);
     }
   }, [showComments, onLoadComments, post.replies.length, loadingComments]);
+
+  // 仅无评论加载完成后清除标记
+  useEffect(() => {
+    if (!loadingComments && isFirstOpen && post.replies.length === 0) {
+      const timer = setTimeout(() => setIsFirstOpen(false), 50);
+      return () => clearTimeout(timer);
+    }
+  }, [loadingComments, isFirstOpen, post.replies.length]);
 
   const handleReplySubmit = useCallback(
     async (e: FormEvent) => {
@@ -235,16 +255,16 @@ export default function PostCard({
             className="overflow-hidden"
           >
             <div className="mt-3 space-y-3 border-t border-border/30 pt-3">
-              {/* 评论加载中 */}
-              {loadingComments && (
+              {/* 仅【无评论+加载中/刚打开】才显示加载转圈 */}
+              {(loadingComments || isFirstOpen) && post.replies.length === 0 && (
                 <div className="flex items-center justify-center py-4 gap-2">
                   <Loader2 className="size-4 animate-spin text-muted-foreground" />
                   <span className="text-xs text-muted-foreground">加载评论中...</span>
                 </div>
               )}
 
-              {/* 已有评论列表 */}
-              {!loadingComments && post.replies.length > 0 && (
+              {/* 已有评论列表（打开直接渲染，不经过loading） */}
+              {post.replies.length > 0 && (
                 <div className="space-y-2.5">
                   {post.replies.map((reply) => (
                     <div key={reply.id} className="flex gap-2.5">
@@ -272,8 +292,8 @@ export default function PostCard({
                 </div>
               )}
 
-              {/* 暂无评论 */}
-              {!loadingComments && post.replies.length === 0 && (
+              {/* 暂无评论（仅加载完成、无评论时渲染） */}
+              {!loadingComments && !isFirstOpen && post.replies.length === 0 && (
                 <p className="text-center text-xs text-muted-foreground py-2">
                   暂无评论，来说点什么吧
                 </p>
