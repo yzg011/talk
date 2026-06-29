@@ -175,6 +175,19 @@ export default function PostCard({
         <AlertDialog>
           <AlertDialogTrigger asChild>
             
+         {/* 隐藏删除按键... */}
+            
+/*             <Button
+              variant="ghost"
+              size="icon"
+              className="size-8 shrink-0 text-muted-foreground hover:text-destructive"
+              aria-label="删除动态" >
+              <Trash2 className="size-4" />
+            </Button>   */
+
+
+            
+            {/* 原来删除按钮位置，用空div占位维持布局 */}
             <div className="size-8 shrink-0" />
             
           </AlertDialogTrigger>
