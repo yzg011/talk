@@ -1,14 +1,14 @@
 // EXPORTS: getMemos, createMemo, deleteMemo, likeMemo, unlikeMemo, getMemoComments, createMemoComment, uploadResource, MEMOS_BASE_URL, MEMOS_TOKEN
 
-// 开发环境使用 Vite 代理解决跨域，生产环境使用真实地址
-export const MEMOS_BASE_URL = '/memos-api';
+// 开发环境使用 Vite 代理 /memos-api，生产环境直连真实域名
+const IS_DEV = import.meta.env.DEV;
+export const MEMOS_BASE_URL = IS_DEV ? '/memos-api' : 'https://memo.z2m.store';
 // 从环境变量读取 MEMOS_TOKEN
 export const MEMOS_TOKEN = import.meta.env.VITE_MEMOS_TOKEN || '';
 
 if (!MEMOS_TOKEN) {
   console.warn('未配置 VITE_MEMOS_TOKEN 环境变量，Memos 接口将无法正常请求');
 }
-
 // 简单的 logger，替代 lark-apaas 的 logger，避免本地跨域错误
 const logger = {
   info: (msg: string) => console.log('[Memos API]', msg),
