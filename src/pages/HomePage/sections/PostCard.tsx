@@ -174,6 +174,9 @@ export default function PostCard({
         {/* 删除按钮 */}
         <AlertDialog>
           <AlertDialogTrigger asChild>
+            
+            <div className="size-8 shrink-0" />
+            
           </AlertDialogTrigger>
           <AlertDialogContent>
             <AlertDialogHeader>
