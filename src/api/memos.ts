@@ -2,7 +2,12 @@
 
 // 开发环境使用 Vite 代理解决跨域，生产环境使用真实地址
 export const MEMOS_BASE_URL = '/memos-api';
-export const MEMOS_TOKEN = 'memos_pat_aIUlu7UtBbXibmD6WHCEdQM9fEc1Mo35';
+// 从环境变量读取 MEMOS_TOKEN
+export const MEMOS_TOKEN = import.meta.env.VITE_MEMOS_TOKEN || '';
+
+if (!MEMOS_TOKEN) {
+  console.warn('未配置 VITE_MEMOS_TOKEN 环境变量，Memos 接口将无法正常请求');
+}
 
 // 简单的 logger，替代 lark-apaas 的 logger，避免本地跨域错误
 const logger = {
