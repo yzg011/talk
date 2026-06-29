@@ -9,7 +9,7 @@ export const MOCK_POSTS: IPost[] = [
     avatar: '',
     content: '今天天气真好，适合出去走走 🌿 分享一组随手拍的照片～',
     images: [
-      '/spark/app/app_4kezbdy2xttzy/runtime/api/v1/storage/object/bucket_aadkhnjlwfscq_static/static%2Faadkhm7iqj4di_ve_miaoda',
+      'https://img.z2m.store/file/bg/1780919518075_9.jpg',
     ],
     created: new Date(Date.now() - 1000 * 60 * 30).toISOString(),
     like: 12,
