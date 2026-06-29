@@ -174,14 +174,6 @@ export default function PostCard({
         {/* 删除按钮 */}
         <AlertDialog>
           <AlertDialogTrigger asChild>
-            <Button
-              variant="ghost"
-              size="icon"
-              className="size-8 shrink-0 text-muted-foreground hover:text-destructive"
-              aria-label="删除动态"
-            >
-              <Trash2 className="size-4" />
-            </Button>
           </AlertDialogTrigger>
           <AlertDialogContent>
             <AlertDialogHeader>
