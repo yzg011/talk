@@ -18,19 +18,4 @@ export default defineConfig({
       },
     },
   },
-}),
-
-import { createHtmlPlugin } from 'vite-plugin-html'
-export default defineConfig({
-  plugins: [
-    createHtmlPlugin({
-      inject: {
-        data: {
-          appName: '我的说说',
-          appAvatar: '',
-          appDescription: ''
-        }
-      }
-    })
-  ]
 })
