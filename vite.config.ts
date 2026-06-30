@@ -10,7 +10,6 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      // 开发环境代理 memos API，解决跨域问题
       '/memos-api': {
         target: 'https://memo.z2m.store',
         changeOrigin: true,
@@ -18,4 +17,6 @@ export default defineConfig({
       },
     },
   },
+  // 暴露管理员账号密码到前端
+  envPrefix: 'VITE_'
 })
