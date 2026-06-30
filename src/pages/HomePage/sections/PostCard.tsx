@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect, type FormEvent } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Heart, MessageCircle, Trash2, Send, ChevronDown, ChevronUp, Clock, Loader2 } from 'lucide-react';
+import { Heart, MessageCircle, Trash2, Send, Loader2, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -18,6 +18,8 @@ import {
 import { Image } from '@/components/ui/image';
 import { formatRelativeTime } from '@/lib/date';
 import type { IPost } from '@/types/post';
+import { useAuthStore } from '@/stores/auth';
+import { toast } from 'sonner';
 
 interface PostCardProps {
   post: IPost;
@@ -40,32 +42,24 @@ export default function PostCard({
   onLoadComments,
   loadingComments = false,
 }: PostCardProps) {
+  const isAdminLogin = useAuthStore((state) => state.isLogin);
   const [showComments, setShowComments] = useState(false);
   const [replyText, setReplyText] = useState('');
   const [submittingReply, setSubmittingReply] = useState(false);
   const [deleting, setDeleting] = useState(false);
-  // 仅无评论打开时才启用首次加载标记
   const [isFirstOpen, setIsFirstOpen] = useState(false);
 
-  // 展开评论
   useEffect(() => {
     if (showComments) {
-      // 关键判断：已有评论，不开启加载占位
       if (post.replies.length > 0) {
         setIsFirstOpen(false);
       } else {
-        // 无评论，打开时启用加载标记
         setIsFirstOpen(true);
-        if (onLoadComments && !loadingComments) {
-          onLoadComments();
-        }
+        if (onLoadComments && !loadingComments) onLoadComments();
       }
-    } else {
-      setIsFirstOpen(false);
-    }
+    } else setIsFirstOpen(false);
   }, [showComments, onLoadComments, post.replies.length, loadingComments]);
 
-  // 仅无评论加载完成后清除标记
   useEffect(() => {
     if (!loadingComments && isFirstOpen && post.replies.length === 0) {
       const timer = setTimeout(() => setIsFirstOpen(false), 50);
@@ -78,7 +72,6 @@ export default function PostCard({
       e.preventDefault();
       const trimmed = replyText.trim();
       if (!trimmed || submittingReply) return;
-
       setSubmittingReply(true);
       try {
         onComment(trimmed);
@@ -112,7 +105,6 @@ export default function PostCard({
       transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
       className="rounded-xl border border-border/50 bg-card p-4 md:p-5 shadow-xs"
     >
-      {/* 头部：头像 + 昵称 + 时间 + 删除 */}
       <div className="flex items-start gap-3">
         <Avatar className="size-10 shrink-0 ring-2 ring-background">
           <AvatarImage src={post.avatar} alt={post.nick} />
@@ -123,23 +115,17 @@ export default function PostCard({
 
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 flex-wrap">
-            <span className="font-semibold text-sm text-foreground truncate">
-              {post.nick}
-            </span>
+            <span className="font-semibold text-sm text-foreground truncate">{post.nick}</span>
             <span className="flex items-center gap-1 text-xs text-muted-foreground">
               <Clock className="size-3" />
               {formatRelativeTime(post.created)}
             </span>
           </div>
-
-          {/* 文字内容 */}
           {post.content && (
             <p className="mt-2 text-sm text-foreground/90 leading-relaxed whitespace-pre-line break-words">
               {post.content}
             </p>
           )}
-
-          {/* 图片网格 */}
           {post.images.length > 0 && (
             <div
               className={`mt-3 grid gap-2 ${
@@ -171,78 +157,86 @@ export default function PostCard({
           )}
         </div>
 
-        {/* 删除按钮 */}
-        <AlertDialog>
-          <AlertDialogTrigger asChild>
-            
-         {/* 隐藏删除按键... */}
-            
-
-
-            
-            {/* 原来删除按钮位置，用空div占位维持布局 */}
-            <div className="size-8 shrink-0" />
-            
-          </AlertDialogTrigger>
-          <AlertDialogContent>
-            <AlertDialogHeader>
-              <AlertDialogTitle>确认删除</AlertDialogTitle>
-              <AlertDialogDescription>
-                删除后无法恢复，确定要删除这条动态吗？
-              </AlertDialogDescription>
-            </AlertDialogHeader>
-            <AlertDialogFooter>
-              <AlertDialogCancel>取消</AlertDialogCancel>
-              <AlertDialogAction
-                onClick={handleDelete}
-                disabled={deleting}
-                className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
+        {/* 登录显示删除弹窗，未登录占位盒子 */}
+        {isAdminLogin ? (
+          <AlertDialog>
+            <AlertDialogTrigger asChild>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="size-8 shrink-0 text-muted-foreground hover:text-destructive"
+                aria-label="删除动态"
               >
-                {deleting ? '删除中...' : '确认删除'}
-              </AlertDialogAction>
-            </AlertDialogFooter>
-          </AlertDialogContent>
-        </AlertDialog>
+                <Trash2 className="size-4" />
+              </Button>
+            </AlertDialogTrigger>
+            <AlertDialogContent>
+              <AlertDialogHeader>
+                <AlertDialogTitle>确认删除</AlertDialogTitle>
+                <AlertDialogDescription>删除后无法恢复，确定要删除这条动态吗？</AlertDialogDescription>
+              </AlertDialogHeader>
+              <AlertDialogFooter>
+                <AlertDialogCancel>取消</AlertDialogCancel>
+                <AlertDialogAction
+                  onClick={handleDelete}
+                  disabled={deleting}
+                  className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
+                >
+                  {deleting ? '删除中...' : '确认删除'}
+                </AlertDialogAction>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
+        ) : (
+          <div className="size-8 shrink-0" />
+        )}
       </div>
 
-      {/* 底部操作栏 */}
-      <div className="mt-4 flex items-center gap-1 border-t border-border/30 pt-3">
-        {/* 点赞 */}
-        <Button
-          variant="ghost"
-          size="sm"
-          onClick={() => (post.liked ? onUnlike() : onLike())}
-          className={`gap-1.5 text-xs ${
-            post.liked
-              ? 'text-red-500 hover:text-red-600'
-              : 'text-muted-foreground hover:text-foreground'
-          }`}
-        >
-          <Heart
-            className={`size-4 transition-transform duration-200 ${
-              post.liked ? 'fill-current scale-110' : ''
+      {/* 底部仿截图互动栏 */}
+      <div className="mt-4 flex items-center justify-between border-t border-border/30 pt-3">
+        <div className="flex items-center gap-3">
+          {/* 点赞圆形按钮 */}
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => (post.liked ? onUnlike() : onLike())}
+            className={`size-8 rounded-full ${
+              post.liked
+                ? 'text-red-500 bg-red-50 hover:bg-red-100'
+                : 'text-muted-foreground bg-muted hover:bg-muted/80'
             }`}
-          />
-          {post.like > 0 && <span>{post.like}</span>}
-        </Button>
+          >
+            <Heart
+              className={`size-4 transition-transform duration-200 ${
+                post.liked ? 'fill-current scale-110' : ''
+              }`}
+            />
+          </Button>
+          {post.like > 0 && <span className="text-xs text-muted-foreground">{post.like}</span>}
 
-        {/* 评论 */}
-        <Button
-          variant="ghost"
-          size="sm"
-          onClick={() => setShowComments((v) => !v)}
-          className={`gap-1.5 text-xs ${
-            showComments ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
-          }`}
-        >
-          <MessageCircle className="size-4" />
-          {post.replies.length > 0 && <span>{post.replies.length}</span>}
-          {showComments ? (
-            <ChevronUp className="size-3" />
-          ) : (
-            <ChevronDown className="size-3" />
-          )}
-        </Button>
+          {/* 评论圆形按钮 */}
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setShowComments(v => !v)}
+            className="size-8 rounded-full bg-muted text-muted-foreground hover:bg-muted/80"
+          >
+            <MessageCircle className="size-4" />
+          </Button>
+          {post.replies.length > 0 && <span className="text-xs text-muted-foreground">{post.replies.length}</span>}
+        </div>
+
+        {/* 已有评论未展开显示View all */}
+        {post.replies.length > 0 && !showComments && (
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => setShowComments(true)}
+            className="text-xs text-muted-foreground hover:text-foreground"
+          >
+            View all
+          </Button>
+        )}
       </div>
 
       {/* 评论区 */}
@@ -256,15 +250,12 @@ export default function PostCard({
             className="overflow-hidden"
           >
             <div className="mt-3 space-y-3 border-t border-border/30 pt-3">
-              {/* 仅【无评论+加载中/刚打开】才显示加载转圈 */}
               {(loadingComments || isFirstOpen) && post.replies.length === 0 && (
                 <div className="flex items-center justify-center py-4 gap-2">
                   <Loader2 className="size-4 animate-spin text-muted-foreground" />
                   <span className="text-xs text-muted-foreground">加载评论中...</span>
                 </div>
               )}
-
-              {/* 已有评论列表（打开直接渲染，不经过loading） */}
               {post.replies.length > 0 && (
                 <div className="space-y-2.5">
                   {post.replies.map((reply) => (
@@ -277,30 +268,18 @@ export default function PostCard({
                       </Avatar>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2">
-                          <span className="text-xs font-medium text-foreground">
-                            {reply.nick}
-                          </span>
-                          <span className="text-[10px] text-muted-foreground">
-                            {formatRelativeTime(reply.created)}
-                          </span>
+                          <span className="text-xs font-medium text-foreground">{reply.nick}</span>
+                          <span className="text-[10px] text-muted-foreground">{formatRelativeTime(reply.created)}</span>
                         </div>
-                        <p className="mt-0.5 text-xs text-foreground/80 leading-relaxed break-words">
-                          {reply.content}
-                        </p>
+                        <p className="mt-0.5 text-xs text-foreground/80 leading-relaxed break-words">{reply.content}</p>
                       </div>
                     </div>
                   ))}
                 </div>
               )}
-
-              {/* 暂无评论（仅加载完成、无评论时渲染） */}
               {!loadingComments && !isFirstOpen && post.replies.length === 0 && (
-                <p className="text-center text-xs text-muted-foreground py-2">
-                  暂无评论，来说点什么吧
-                </p>
+                <p className="text-center text-xs text-muted-foreground py-2">暂无评论，来说点什么吧</p>
               )}
-
-              {/* 评论输入框 */}
               <form onSubmit={handleReplySubmit} className="flex gap-2">
                 <Textarea
                   value={replyText}
@@ -311,7 +290,6 @@ export default function PostCard({
                 />
                 <Button
                   type="submit"
-                  size="sm"
                   disabled={!replyText.trim() || submittingReply}
                   className="shrink-0 self-end"
                 >
