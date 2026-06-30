@@ -1,372 +1,333 @@
-import { useState, useCallback, useEffect, useRef } from 'react';
-import { toast } from 'sonner';
-
-import { MOCK_PROFILE } from '@/data/profile';
-import { MOCK_POSTS } from '@/data/posts';
+import { useState, useCallback, useEffect, type FormEvent } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Heart, MessageCircle, Trash2, Send, ChevronDown, ChevronUp, Clock, Loader2 } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Textarea } from '@/components/ui/textarea';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import {
-  getMemos,
-  createMemo,
-  deleteMemo,
-  likeMemo,
-  unlikeMemo,
-  getMemoComments,
-  createMemoComment,
-  uploadResource,
-  MEMOS_BASE_URL,
-} from '@/api/memos';
-import type { IPost, IReply } from '@/types/post';
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from '@/components/ui/alert-dialog';
+import { Image } from '@/components/ui/image';
+import { formatRelativeTime } from '@/lib/date';
+import type { IPost } from '@/types/post';
 
-import ProfileSection from './sections/ProfileSection';
-import PublishSection from './sections/PublishSection';
-import TimelineSection from './sections/TimelineSection';
-import ImagePreview from './sections/ImagePreview';
+interface PostCardProps {
+  post: IPost;
+  onLike: () => void;
+  onUnlike: () => void;
+  onDelete: () => void;
+  onComment: (content: string) => void;
+  onImageClick: (imgIndex: number) => void;
+  onLoadComments?: () => void;
+  loadingComments?: boolean;
+}
 
-const PAGE_SIZE = 10;
-const API_PREFIX = '/memos-api';
+export default function PostCard({
+  post,
+  onLike,
+  onUnlike,
+  onDelete,
+  onComment,
+  onImageClick,
+  onLoadComments,
+  loadingComments = false,
+}: PostCardProps) {
+  const [showComments, setShowComments] = useState(false);
+  const [replyText, setReplyText] = useState('');
+  const [submittingReply, setSubmittingReply] = useState(false);
+  const [deleting, setDeleting] = useState(false);
+  // 仅无评论打开时才启用首次加载标记
+  const [isFirstOpen, setIsFirstOpen] = useState(false);
 
-export default function HomePage() {
-  const [posts, setPosts] = useState<IPost[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-  const [nextPageToken, setNextPageToken] = useState<string | undefined>();
-  const [hasMore, setHasMore] = useState(true);
-  const [previewOpen, setPreviewOpen] = useState(false);
-  const [previewImages, setPreviewImages] = useState<string[]>([]);
-  const [previewIndex, setPreviewIndex] = useState(0);
-  const [loadingComments, setLoadingComments] = useState<Set<string>>(new Set());
-  const initialLoadDone = useRef(false);
-
-  /**
-   * 图片地址拼接：name + filename 完整路径
-   */
-  const extractImagesFromMemo = (attachments?: any[]): string[] => {
-    if (!Array.isArray(attachments) || attachments.length === 0) return [];
-    return attachments
-      .filter((a) => a.type?.startsWith('image/'))
-      .map((a) => {
-        if (a.externalLink) return a.externalLink;
-        if (!a.name || !a.filename) return '';
-        return `${API_PREFIX}/file/${a.name}/${a.filename}`;
-      })
-      .filter(Boolean);
-  };
-
-  /**
-   * 点赞状态计算
-   */
-  const extractLikeInfo = (reactions?: any[], userId?: string) => {
-    const thumbsUp = reactions?.filter((r) => r.reactionType === 'THUMBS_UP') || [];
-    const myReaction = thumbsUp.find((r) => r.creatorId === userId);
-    return {
-      likeCount: thumbsUp.length,
-      liked: !!myReaction,
-      myReactionId: myReaction?.id ?? null,
-    };
-  };
-
-  /* 加载列表 */
-  const loadPosts = useCallback(async (pageToken?: string) => {
-    try {
-      setError(null);
-      if (!pageToken) setLoading(true);
-
-      const result = await getMemos({
-        pageSize: PAGE_SIZE,
-        pageToken,
-      });
-
-      const apiPosts: IPost[] = result.memos.map((memo) => {
-        const images = extractImagesFromMemo(memo.attachments);
-        const likeInfo = extractLikeInfo(memo.reactions, undefined);
-        return {
-          id: memo.name,
-          nick: MOCK_PROFILE.nick,
-          avatar: MOCK_PROFILE.avatar,
-          content: memo.content || '',
-          images,
-          created: memo.createTime || new Date().toISOString(),
-          like: likeInfo.likeCount,
-          liked: likeInfo.liked,
-          myReactionId: likeInfo.myReactionId,
-          replies: [],
-          source: 'api' as const,
-        };
-      });
-
-      if (!pageToken) {
-        setPosts(apiPosts);
-      } else {
-        setPosts((prev) => [...prev, ...apiPosts]);
-      }
-
-      setNextPageToken(result.nextPageToken);
-      setHasMore(!!result.nextPageToken);
-    } catch (err) {
-      const msg = err instanceof Error ? err.message : '加载失败';
-      console.error('Failed to load posts:', err);
-
-      if (!pageToken) {
-        setError(msg);
-        setPosts(MOCK_POSTS);
-      } else {
-        toast.error('加载更多失败');
-      }
-    } finally {
-      setLoading(false);
-    }
-  }, []);
-
+  // 展开评论
   useEffect(() => {
-    if (!initialLoadDone.current) {
-      initialLoadDone.current = true;
-      loadPosts();
+    if (showComments) {
+      // 关键判断：已有评论，不开启加载占位
+      if (post.replies.length > 0) {
+        setIsFirstOpen(false);
+      } else {
+        // 无评论，打开时启用加载标记
+        setIsFirstOpen(true);
+        if (onLoadComments && !loadingComments) {
+          onLoadComments();
+        }
+      }
+    } else {
+      setIsFirstOpen(false);
     }
-  }, [loadPosts]);
+  }, [showComments, onLoadComments, post.replies.length, loadingComments]);
 
-  /* 加载评论 */
-  const loadComments = useCallback(async (postId: string) => {
-    if (loadingComments.has(postId)) return;
+  // 仅无评论加载完成后清除标记
+  useEffect(() => {
+    if (!loadingComments && isFirstOpen && post.replies.length === 0) {
+      const timer = setTimeout(() => setIsFirstOpen(false), 50);
+      return () => clearTimeout(timer);
+    }
+  }, [loadingComments, isFirstOpen, post.replies.length]);
 
-    const post = posts.find((p) => p.id === postId);
-    if (!post || post.source === 'mock') return;
-    if (post.replies.length > 0) return;
+  const handleReplySubmit = useCallback(
+    async (e: FormEvent) => {
+      e.preventDefault();
+      const trimmed = replyText.trim();
+      if (!trimmed || submittingReply) return;
 
-    setLoadingComments((prev) => new Set(prev).add(postId));
+      setSubmittingReply(true);
+      try {
+        onComment(trimmed);
+        setReplyText('');
+      } catch {
+        toast.error('评论发布失败，请稍后重试');
+      } finally {
+        setSubmittingReply(false);
+      }
+    },
+    [replyText, submittingReply, onComment],
+  );
 
+  const handleDelete = useCallback(async () => {
+    if (deleting) return;
+    setDeleting(true);
     try {
-      const comments = await getMemoComments(postId);
-      const replies: IReply[] = comments.map((c) => ({
-        id: c.name || c.uid || `r-${Math.random()}`,
-        nick: MOCK_PROFILE.nick,
-        avatar: MOCK_PROFILE.avatar,
-        content: c.content,
-        created: c.createTime || new Date().toISOString(),
-      }));
-
-      setPosts((prev) =>
-        prev.map((p) => (p.id === postId ? { ...p, replies } : p)),
-      );
-    } catch (err) {
-      console.error('Failed to load comments:', err);
-      toast.error('评论加载失败');
+      onDelete();
+    } catch {
+      toast.error('删除失败，请稍后重试');
     } finally {
-      setLoadingComments((prev) => {
-        const next = new Set(prev);
-        next.delete(postId);
-        return next;
-      });
+      setDeleting(false);
     }
-  }, [posts, loadingComments]);
-
-  /* 发布动态（修复上传逻辑，完整保存filename） */
-  const handlePublish = useCallback(async (content: string, imageFiles: File[]) => {
-    try {
-      const uploadedResources = [];
-      // 循环上传每张图片
-      for (const file of imageFiles) {
-        const resource = await uploadResource(file);
-        // 必须携带 filename，否则拼接图片地址会失效
-        uploadedResources.push({
-          name: resource.name,
-          filename: resource.filename,
-          type: resource.type,
-          size: resource.size,
-          externalLink: resource.externalLink,
-        });
-      }
-
-      // 创建备忘录
-      const result = await createMemo({
-        content: content.trim() || ' ',
-        visibility: 'PUBLIC',
-        attachments: uploadedResources,
-      });
-
-      // 生成图片列表
-      const images = extractImagesFromMemo(result.attachments || uploadedResources);
-      const newPost: IPost = {
-        id: result.name,
-        nick: MOCK_PROFILE.nick,
-        avatar: MOCK_PROFILE.avatar,
-        content,
-        images,
-        created: result.createTime || new Date().toISOString(),
-        like: 0,
-        liked: false,
-        myReactionId: null,
-        replies: [],
-        source: 'api',
-      };
-      setPosts((prev) => [newPost, ...prev]);
-      toast.success('发布成功');
-    } catch (err) {
-      console.error('发布/上传失败：', err);
-      toast.error('图片上传或发布失败，请重试');
-      throw err;
-    }
-  }, []);
-
-  /* 删除 */
-  const handleDelete = useCallback(async (postId: string) => {
-    const post = posts.find((p) => p.id === postId);
-    if (!post) return;
-
-    if (post.source === 'mock') {
-      setPosts((prev) => prev.filter((p) => p.id !== postId));
-      return;
-    }
-
-    try {
-      await deleteMemo(postId);
-      setPosts((prev) => prev.filter((p) => p.id !== postId));
-      toast.success('删除成功');
-    } catch {
-      toast.error('删除失败');
-    }
-  }, [posts]);
-
-  /* 点赞 */
-  const handleLike = useCallback(async (postId: string) => {
-    const post = posts.find((p) => p.id === postId);
-    if (!post || post.liked) return;
-
-    if (post.source === 'mock') {
-      setPosts((prev) =>
-        prev.map((p) =>
-          p.id === postId ? { ...p, liked: true, like: p.like + 1 } : p,
-        ),
-      );
-      return;
-    }
-
-    try {
-      const reaction = await likeMemo(postId);
-      setPosts((prev) =>
-        prev.map((p) =>
-          p.id === postId
-            ? { ...p, liked: true, like: p.like + 1, myReactionId: reaction.id }
-            : p,
-        ),
-      );
-    } catch {
-      toast.error('点赞失败');
-    }
-  }, [posts]);
-
-  /* 取消点赞 */
-  const handleUnlike = useCallback(async (postId: string) => {
-    const post = posts.find((p) => p.id === postId);
-    if (!post || !post.liked) return;
-
-    if (post.source === 'mock') {
-      setPosts((prev) =>
-        prev.map((p) =>
-          p.id === postId ? { ...p, liked: false, like: Math.max(0, p.like - 1) } : p,
-        ),
-      );
-      return;
-    }
-
-    try {
-      if (post.myReactionId) {
-        await unlikeMemo(postId, post.myReactionId);
-      }
-      setPosts((prev) =>
-        prev.map((p) =>
-          p.id === postId
-            ? { ...p, liked: false, like: Math.max(0, p.like - 1), myReactionId: null }
-            : p,
-        ),
-      );
-    } catch {
-      toast.error('取消点赞失败');
-    }
-  }, [posts]);
-
-  /* 评论 */
-  const handleComment = useCallback(async (postId: string, content: string) => {
-    const post = posts.find((p) => p.id === postId);
-    if (!post) return;
-
-    if (post.source === 'mock') {
-      const newReply: IReply = {
-        id: `mock-r-${Date.now()}`,
-        nick: MOCK_PROFILE.nick,
-        avatar: MOCK_PROFILE.avatar,
-        content,
-        created: new Date().toISOString(),
-      };
-      setPosts((prev) =>
-        prev.map((p) =>
-          p.id === postId ? { ...p, replies: [...p.replies, newReply] } : p,
-        ),
-      );
-      return;
-    }
-
-    try {
-      const result = await createMemoComment(postId, content);
-      const newReply: IReply = {
-        id: result.name || result.uid || `r-${Date.now()}`,
-        nick: MOCK_PROFILE.nick,
-        avatar: MOCK_PROFILE.avatar,
-        content,
-        created: result.createTime || new Date().toISOString(),
-      };
-      setPosts((prev) =>
-        prev.map((p) =>
-          p.id === postId ? { ...p, replies: [...p.replies, newReply] } : p,
-        ),
-      );
-      toast.success('评论成功');
-    } catch {
-      toast.error('评论发布失败');
-    }
-  }, [posts]);
-
-  /* 加载更多 */
-  const handleLoadMore = useCallback(() => {
-    if (loading || !hasMore) return;
-    loadPosts(nextPageToken);
-  }, [loading, hasMore, nextPageToken, loadPosts]);
-
-  /* 图片预览 */
-  const handleImageClick = useCallback((images: string[], index: number) => {
-    setPreviewImages(images);
-    setPreviewIndex(index);
-    setPreviewOpen(true);
-  }, []);
-
-  const handlePreviewClose = useCallback(() => {
-    setPreviewOpen(false);
-  }, []);
+  }, [deleting, onDelete]);
 
   return (
-    <div className="min-h-screen bg-background">
-      <main className="max-w-[640px] mx-auto px-4 py-8 md:py-12 space-y-8">
-        <ProfileSection profile={MOCK_PROFILE} />
-        <PublishSection onPublish={handlePublish} />
-        <TimelineSection
-          posts={posts}
-          loading={loading}
-          error={error}
-          hasMore={hasMore}
-          onLoadMore={handleLoadMore}
-          onLike={handleLike}
-          onUnlike={handleUnlike}
-          onDelete={handleDelete}
-          onComment={handleComment}
-          onImageClick={handleImageClick}
-          onLoadComments={loadComments}
-          loadingComments={loadingComments}
-        />
-      </main>
-      <ImagePreview
-        images={previewImages}
-        initialIndex={previewIndex}
-        open={previewOpen}
-        onClose={handlePreviewClose}
-      />
-    </div>
+    <motion.article
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+      className="rounded-xl border border-border/50 bg-card p-4 md:p-5 shadow-xs"
+    >
+      {/* 头部：头像 + 昵称 + 时间 + 删除 */}
+      <div className="flex items-start gap-3">
+        <Avatar className="size-10 shrink-0 ring-2 ring-background">
+          <AvatarImage src={post.avatar} alt={post.nick} />
+          <AvatarFallback className="bg-primary/10 text-primary text-sm font-semibold">
+            {post.nick.charAt(0)}
+          </AvatarFallback>
+        </Avatar>
+
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center gap-2 flex-wrap">
+            <span className="font-semibold text-sm text-foreground truncate">
+              {post.nick}
+            </span>
+            <span className="flex items-center gap-1 text-xs text-muted-foreground">
+              <Clock className="size-3" />
+              {formatRelativeTime(post.created)}
+            </span>
+          </div>
+
+          {/* 文字内容 */}
+          {post.content && (
+            <p className="mt-2 text-sm text-foreground/90 leading-relaxed whitespace-pre-line break-words">
+              {post.content}
+            </p>
+          )}
+
+          {/* 图片网格 */}
+          {post.images.length > 0 && (
+            <div
+              className={`mt-3 grid gap-2 ${
+                post.images.length === 1
+                  ? 'grid-cols-1'
+                  : post.images.length === 2
+                    ? 'grid-cols-2'
+                    : 'grid-cols-3'
+              }`}
+            >
+              {post.images.map((img, idx) => (
+                <button
+                  key={idx}
+                  type="button"
+                  onClick={() => onImageClick(idx)}
+                  className={`relative overflow-hidden rounded-lg border border-border/30 bg-muted cursor-pointer group ${
+                    post.images.length === 1 ? 'aspect-video max-h-80' : 'aspect-square'
+                  }`}
+                >
+                  <Image
+                    src={img}
+                    alt={`动态图片 ${idx + 1}`}
+                    className="size-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/5 transition-colors duration-200" />
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* 删除按钮 */}
+        <AlertDialog>
+          <AlertDialogTrigger asChild>
+            
+         {/* 隐藏删除按键... */}
+            
+
+
+            
+            {/* 原来删除按钮位置，用空div占位维持布局 */}
+            <div className="size-8 shrink-0" />
+            
+          </AlertDialogTrigger>
+          <AlertDialogContent>
+            <AlertDialogHeader>
+              <AlertDialogTitle>确认删除</AlertDialogTitle>
+              <AlertDialogDescription>
+                删除后无法恢复，确定要删除这条动态吗？
+              </AlertDialogDescription>
+            </AlertDialogHeader>
+            <AlertDialogFooter>
+              <AlertDialogCancel>取消</AlertDialogCancel>
+              <AlertDialogAction
+                onClick={handleDelete}
+                disabled={deleting}
+                className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
+              >
+                {deleting ? '删除中...' : '确认删除'}
+              </AlertDialogAction>
+            </AlertDialogFooter>
+          </AlertDialogContent>
+        </AlertDialog>
+      </div>
+
+      {/* 底部操作栏 */}
+      <div className="mt-4 flex items-center gap-1 border-t border-border/30 pt-3">
+        {/* 点赞 */}
+        <Button
+          variant="ghost"
+          size="sm"
+          onClick={() => (post.liked ? onUnlike() : onLike())}
+          className={`gap-1.5 text-xs ${
+            post.liked
+              ? 'text-red-500 hover:text-red-600'
+              : 'text-muted-foreground hover:text-foreground'
+          }`}
+        >
+          <Heart
+            className={`size-4 transition-transform duration-200 ${
+              post.liked ? 'fill-current scale-110' : ''
+            }`}
+          />
+          {post.like > 0 && <span>{post.like}</span>}
+        </Button>
+
+        {/* 评论 */}
+        <Button
+          variant="ghost"
+          size="sm"
+          onClick={() => setShowComments((v) => !v)}
+          className={`gap-1.5 text-xs ${
+            showComments ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
+          }`}
+        >
+          <MessageCircle className="size-4" />
+          {post.replies.length > 0 && <span>{post.replies.length}</span>}
+          {showComments ? (
+            <ChevronUp className="size-3" />
+          ) : (
+            <ChevronDown className="size-3" />
+          )}
+        </Button>
+      </div>
+
+      {/* 评论区 */}
+      <AnimatePresence initial={false}>
+        {showComments && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25, ease: 'easeInOut' }}
+            className="overflow-hidden"
+          >
+            <div className="mt-3 space-y-3 border-t border-border/30 pt-3">
+              {/* 仅【无评论+加载中/刚打开】才显示加载转圈 */}
+              {(loadingComments || isFirstOpen) && post.replies.length === 0 && (
+                <div className="flex items-center justify-center py-4 gap-2">
+                  <Loader2 className="size-4 animate-spin text-muted-foreground" />
+                  <span className="text-xs text-muted-foreground">加载评论中...</span>
+                </div>
+              )}
+
+              {/* 已有评论列表（打开直接渲染，不经过loading） */}
+              {post.replies.length > 0 && (
+                <div className="space-y-2.5">
+                  {post.replies.map((reply) => (
+                    <div key={reply.id} className="flex gap-2.5">
+                      <Avatar className="size-7 shrink-0">
+                        <AvatarImage src={reply.avatar} alt={reply.nick} />
+                        <AvatarFallback className="bg-muted text-muted-foreground text-[10px]">
+                          {reply.nick.charAt(0)}
+                        </AvatarFallback>
+                      </Avatar>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2">
+                          <span className="text-xs font-medium text-foreground">
+                            {reply.nick}
+                          </span>
+                          <span className="text-[10px] text-muted-foreground">
+                            {formatRelativeTime(reply.created)}
+                          </span>
+                        </div>
+                        <p className="mt-0.5 text-xs text-foreground/80 leading-relaxed break-words">
+                          {reply.content}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* 暂无评论（仅加载完成、无评论时渲染） */}
+              {!loadingComments && !isFirstOpen && post.replies.length === 0 && (
+                <p className="text-center text-xs text-muted-foreground py-2">
+                  暂无评论，来说点什么吧
+                </p>
+              )}
+
+              {/* 评论输入框 */}
+              <form onSubmit={handleReplySubmit} className="flex gap-2">
+                <Textarea
+                  value={replyText}
+                  onChange={(e) => setReplyText(e.target.value)}
+                  placeholder="写下你的评论..."
+                  rows={2}
+                  className="min-h-0 flex-1 resize-none text-xs"
+                />
+                <Button
+                  type="submit"
+                  size="sm"
+                  disabled={!replyText.trim() || submittingReply}
+                  className="shrink-0 self-end"
+                >
+                  {submittingReply ? (
+                    <span className="flex items-center gap-1">
+                      <span className="size-3 animate-spin rounded-full border-2 border-primary-foreground border-t-transparent" />
+                    </span>
+                  ) : (
+                    <Send className="size-3.5" />
+                  )}
+                </Button>
+              </form>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.article>
   );
 }
