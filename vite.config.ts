@@ -17,6 +17,5 @@ export default defineConfig({
       },
     },
   },
-  // 暴露管理员账号密码到前端
-  envPrefix: 'VITE_'
+
 })
