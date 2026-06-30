@@ -5,21 +5,6 @@ import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
-import LoginDialog from '@/components/LoginDialog';
-
-export default function HomePage() {
-  return (
-    <div>
-      {/* 顶部登录按钮 */}
-      <div className="flex justify-end p-4">
-        <LoginDialog />
-      </div>
-
-      {/* 你的动态列表 */}
-      <PostCard ...props />
-    </div>
-  )
-}
 
 
 
