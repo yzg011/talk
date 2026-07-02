@@ -64,33 +64,7 @@ export default function HomePage() {
     };
   };
 
-  /**
-   * 批量获取单页所有memo的评论
-   */
-  const fetchAllCommentsForMemos = useCallback(async (memos: any[]) => {
-    // 并发请求每条动态评论
-    const memoWithComments = await Promise.all(
-      memos.map(async (memo) => {
-        try {
-          const comments = await getMemoComments(memo.name);
-          const replies: IReply[] = comments.map((c) => ({
-            id: c.name || c.uid || `r-${Math.random()}`,
-            nick: MOCK_PROFILE.nick,
-            avatar: MOCK_PROFILE.avatar,
-            content: c.content,
-            created: c.createTime || new Date().toISOString(),
-          }));
-          return { ...memo, preloadedReplies: replies };
-        } catch (err) {
-          console.error(`加载评论失败 memo ${memo.name}:`, err);
-          return { ...memo, preloadedReplies: [] };
-        }
-      })
-    );
-    return memoWithComments;
-  }, []);
-
-  /* 加载列表（新增自动预加载全部评论逻辑） */
+  /* 加载列表 */
   const loadPosts = useCallback(async (pageToken?: string) => {
     try {
       setError(null);
@@ -101,10 +75,7 @@ export default function HomePage() {
         pageToken,
       });
 
-      // 首页加载时，批量拉取本条分页所有动态的评论
-      const memosWithComments = await fetchAllCommentsForMemos(result.memos);
-
-      const apiPosts: IPost[] = memosWithComments.map((memo) => {
+      const apiPosts: IPost[] = result.memos.map((memo) => {
         const images = extractImagesFromMemo(memo.attachments);
         const likeInfo = extractLikeInfo(memo.reactions, undefined);
         return {
@@ -117,8 +88,7 @@ export default function HomePage() {
           like: likeInfo.likeCount,
           liked: likeInfo.liked,
           myReactionId: likeInfo.myReactionId,
-          // 预加载的评论直接赋值，打开页面就有
-          replies: memo.preloadedReplies || [],
+          replies: [],
           source: 'api' as const,
         };
       });
@@ -144,7 +114,7 @@ export default function HomePage() {
     } finally {
       setLoading(false);
     }
-  }, [fetchAllCommentsForMemos]);
+  }, []);
 
   useEffect(() => {
     if (!initialLoadDone.current) {
@@ -153,12 +123,13 @@ export default function HomePage() {
     }
   }, [loadPosts]);
 
-  /* 加载评论（保留，兼容手动刷新评论逻辑） */
+  /* 加载评论 */
   const loadComments = useCallback(async (postId: string) => {
     if (loadingComments.has(postId)) return;
 
     const post = posts.find((p) => p.id === postId);
     if (!post || post.source === 'mock') return;
+    if (post.replies.length > 0) return;
 
     setLoadingComments((prev) => new Set(prev).add(postId));
 
@@ -223,7 +194,7 @@ export default function HomePage() {
         like: 0,
         liked: false,
         myReactionId: null,
-        replies: [], // 新建动态暂无评论
+        replies: [],
         source: 'api',
       };
       setPosts((prev) => [newPost, ...prev]);
