@@ -2,6 +2,8 @@ import path from 'path'
 import { defineConfig } from '@lark-apaas/coding-preset-vite-react'
 
 export default defineConfig({
+  // 生产环境使用相对路径，修复CF Pages静态资源404
+  base: './',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
@@ -17,5 +19,8 @@ export default defineConfig({
       },
     },
   },
-
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets'
+  }
 })
