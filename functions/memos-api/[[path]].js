@@ -37,8 +37,7 @@ export async function onRequest(context) {
       headers: resHeaders,
     });
   } catch (err)
-    // 捕获所有异常，杜绝1101崩溃
-    console.error("Proxy Worker Error:", err);
+    // 移除console日志，直接返回错误JSON
     return new Response(
       JSON.stringify({
         code: 500,
