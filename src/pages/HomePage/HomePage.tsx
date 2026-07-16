@@ -22,7 +22,7 @@ import TimelineSection from './sections/TimelineSection';
 import ImagePreview from './sections/ImagePreview';
 
 const PAGE_SIZE = 10;
-const API_PREFIX = 'https://memo.z2m.store';
+const API_PREFIX = 'https://ss.z2m.store';
 
 export default function HomePage() {
   const [posts, setPosts] = useState<IPost[]>([]);
