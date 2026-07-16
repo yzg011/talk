@@ -1,8 +1,9 @@
+
 import path from 'path'
 import { defineConfig } from '@lark-apaas/coding-preset-vite-react'
 
 export default defineConfig({
-  base: './', // 保留相对路径，本地打包逻辑不变
+  // base: './',  // 注释/删除此行
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
