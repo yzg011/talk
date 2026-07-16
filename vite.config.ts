@@ -2,7 +2,6 @@ import path from 'path'
 import { defineConfig } from '@lark-apaas/coding-preset-vite-react'
 
 export default defineConfig({
-  // 生产环境使用相对路径，修复CF Pages静态资源404
   base: './',
   resolve: {
     alias: {
@@ -10,15 +9,7 @@ export default defineConfig({
       '@shared': path.resolve(__dirname, 'shared'),
     },
   },
-  server: {
-    proxy: {
-      '/memos-api': {
-        target: 'https://memo.z2m.store',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/memos-api/, ''),
-      },
-    },
-  },
+  // 删除整个 server.proxy 配置，不再本地代理
   build: {
     outDir: 'dist',
     assetsDir: 'assets'
