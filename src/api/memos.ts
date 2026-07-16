@@ -1,7 +1,7 @@
 // EXPORTS: getMemos, createMemo, deleteMemo, likeMemo, unlikeMemo, getMemoComments, createMemoComment, uploadResource, MEMOS_BASE_URL, MEMOS_TOKEN
 
 // 开发环境使用 Vite 代理解决跨域，生产环境使用真实地址
-export const MEMOS_BASE_URL = 'https://memo.z2m.store';
+export const MEMOS_BASE_URL = 'https://ss.z2m.store';
 // 从环境变量读取 MEMOS_TOKEN
 export const MEMOS_TOKEN = import.meta.env.VITE_MEMOS_TOKEN || '';
 
